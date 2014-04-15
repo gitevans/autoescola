@@ -1,0 +1,2158 @@
+-- phpMyAdmin SQL Dump
+-- version 2.11.0
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tempo de Geração: Abr 10, 2014 as 05:51 PM
+-- Versão do Servidor: 5.0.45
+-- Versão do PHP: 5.2.4
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Banco de Dados: `auto_escola_2014`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `acesso`
+--
+
+CREATE TABLE `acesso` (
+  `cod` int(3) unsigned NOT NULL auto_increment,
+  `usuario` varchar(100) default NULL,
+  `senha` varchar(100) default NULL,
+  `nome` varchar(100) default NULL,
+  `email` varchar(200) default NULL,
+  `telefone` varchar(100) default NULL,
+  `chave` tinyint(1) default NULL,
+  PRIMARY KEY  (`cod`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Extraindo dados da tabela `acesso`
+--
+
+INSERT INTO `acesso` (`cod`, `usuario`, `senha`, `nome`, `email`, `telefone`, `chave`) VALUES
+(1, 'admin', 'admin', 'Administrador', 'xyz@xyz.com', '11111', 1),
+(2, 'Eneylton', '123', 'Eneylton de Jesus Campos Barros', 'eneylton@hotmail.com', '98 8800 3198', 2),
+(3, 'Maria ', '123', 'MARIA JOSE', 'maria', '3456789', 3),
+(4, 'julia', '123', 'julia valentina', 'julia@hotmail.com', '(98) 8899 - 9090', 3),
+(5, NULL, NULL, NULL, NULL, NULL, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `alunos`
+--
+
+CREATE TABLE `alunos` (
+  `id_aluno` int(11) NOT NULL auto_increment,
+  `login` varchar(255) NOT NULL,
+  `data` date NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `endereco` varchar(255) NOT NULL,
+  `bairro` varchar(255) NOT NULL,
+  `complemento` varchar(255) default NULL,
+  `municipio` varchar(255) NOT NULL,
+  `cpf` varchar(255) NOT NULL,
+  `cnh` varchar(255) default NULL,
+  `val_cnh` date default NULL,
+  `renach` varchar(255) default NULL,
+  `telefone` varchar(255) default NULL,
+  `email` varchar(255) default NULL,
+  `aniversario` date NOT NULL,
+  `observacao` varchar(255) default NULL,
+  PRIMARY KEY  (`id_aluno`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
+
+--
+-- Extraindo dados da tabela `alunos`
+--
+
+INSERT INTO `alunos` (`id_aluno`, `login`, `data`, `nome`, `endereco`, `bairro`, `complemento`, `municipio`, `cpf`, `cnh`, `val_cnh`, `renach`, `telefone`, `email`, `aniversario`, `observacao`) VALUES
+(36, 'Administrador', '2014-04-09', 'enexs de jesus barros', 'Rua 16 Qd.05', 'Cohatrac IV', 'Quadra de esporte', 'São luis', '909.909.099-99', '8895222222222', '2014-08-28', '7888554499', '(98) 8899-23', 'eneylton@hotmail.com', '2014-05-05', 'MATRICULA'),
+(37, 'Administrador', '2014-04-09', 'ana rosa fiquenni de oliveira', 'Rua 16 Qd.05', 'Cohatrac IV', 'quadra de esporte', 'São luis', '909.909.099-99', '899955222332', '2014-05-05', '5532522', '(98) 8899-23', 'eneylton@hotmail.com', '2014-05-07', 'matricula');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `calendar_events`
+--
+
+CREATE TABLE `calendar_events` (
+  `id` int(11) NOT NULL auto_increment,
+  `event_title` varchar(25) default NULL,
+  `event_shortdesc` varchar(255) default NULL,
+  `event_start` date default NULL,
+  `hora` varchar(100) NOT NULL,
+  `aluno` varchar(255) NOT NULL,
+  `instrutor` varchar(255) NOT NULL,
+  `veiculo` varchar(255) NOT NULL,
+  `categoria` varchar(255) NOT NULL,
+  `tipo` varchar(255) NOT NULL,
+  `descricao` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=68 ;
+
+--
+-- Extraindo dados da tabela `calendar_events`
+--
+
+INSERT INTO `calendar_events` (`id`, `event_title`, `event_shortdesc`, `event_start`, `hora`, `aluno`, `instrutor`, `veiculo`, `categoria`, `tipo`, `descricao`) VALUES
+(65, '', '9:00', '2014-04-09', '8:30', 'enexs de jesus barros', 'jose wilker', 'VW / GOL 1.0', 'B', 'Aula', 'Primeira aula'),
+(66, '', '11:00', '2014-04-11', '9:30', 'enexs de jesus barros', 'jose wilker', 'Chevrolette / Celta 4p ', 'B', 'Aula', 'segunda aula'),
+(67, '', '12:00', '2014-04-09', '8:00', 'enexs de jesus barros', 'jose wilker', 'VW / GOL 1.0', 'B', 'Aula', 'Pagou aula extra');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `carga`
+--
+
+CREATE TABLE `carga` (
+  `id` int(11) NOT NULL auto_increment,
+  `aluno` varchar(255) NOT NULL,
+  `qtd` varchar(255) NOT NULL,
+  `hora` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+
+--
+-- Extraindo dados da tabela `carga`
+--
+
+INSERT INTO `carga` (`id`, `aluno`, `qtd`, `hora`) VALUES
+(12, 'ana rosa fiquenni de oliveira', '1', '2'),
+(11, 'enexs de jesus barros', '5', '10');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `carga1`
+--
+
+CREATE TABLE `carga1` (
+  `id` int(11) NOT NULL auto_increment,
+  `aluno` varchar(255) NOT NULL,
+  `qtd` varchar(255) NOT NULL,
+  `hora` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+
+--
+-- Extraindo dados da tabela `carga1`
+--
+
+INSERT INTO `carga1` (`id`, `aluno`, `qtd`, `hora`) VALUES
+(9, 'enexs de jesus barros', '6', '12'),
+(10, 'ana rosa fiquenni de oliveira', '3', '6');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `carga_legislacao`
+--
+
+CREATE TABLE `carga_legislacao` (
+  `id` int(11) NOT NULL auto_increment,
+  `aluno` varchar(255) NOT NULL,
+  `qtd` varchar(255) NOT NULL,
+  `hora` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=125 ;
+
+--
+-- Extraindo dados da tabela `carga_legislacao`
+--
+
+INSERT INTO `carga_legislacao` (`id`, `aluno`, `qtd`, `hora`) VALUES
+(42, 'enexs de jesus barros', '1', '2'),
+(41, 'enexs de jesus barros', '1', '2'),
+(40, 'ana rosa fiquenni de oliveira', '1', '2'),
+(124, 'ana rosa fiquenni de oliveira', '1', '2'),
+(123, 'enexs de jesus barros', '1', '2'),
+(122, 'enexs de jesus barros', '1', '2'),
+(121, 'ana rosa fiquenni de oliveira', '1', '2'),
+(120, 'ana rosa fiquenni de oliveira', '1', '2'),
+(119, 'ana rosa fiquenni de oliveira', '1', '2'),
+(118, 'ana rosa fiquenni de oliveira', '1', '2'),
+(117, 'ana rosa fiquenni de oliveira', '1', '2'),
+(116, 'ana rosa fiquenni de oliveira', '1', '2'),
+(115, 'ana rosa fiquenni de oliveira', '1', '2'),
+(114, 'ana rosa fiquenni de oliveira', '1', '2'),
+(113, 'ana rosa fiquenni de oliveira', '1', '2');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `carga_trafego`
+--
+
+CREATE TABLE `carga_trafego` (
+  `id` int(11) NOT NULL auto_increment,
+  `aluno` varchar(255) NOT NULL,
+  `qtd` varchar(255) NOT NULL,
+  `hora` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
+
+--
+-- Extraindo dados da tabela `carga_trafego`
+--
+
+INSERT INTO `carga_trafego` (`id`, `aluno`, `qtd`, `hora`) VALUES
+(28, 'ana rosa fiquenni de oliveira', '1', '2'),
+(27, 'enexs de jesus barros', '1', '2'),
+(26, 'enexs de jesus barros', '1', '2');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `categoria`
+--
+
+CREATE TABLE `categoria` (
+  `id_cat` int(11) NOT NULL auto_increment,
+  `Categoria` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id_cat`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Extraindo dados da tabela `categoria`
+--
+
+INSERT INTO `categoria` (`id_cat`, `Categoria`) VALUES
+(1, 'Cartão de Credito'),
+(2, 'Pagamento á vista');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `cor`
+--
+
+CREATE TABLE `cor` (
+  `id` int(11) NOT NULL auto_increment,
+  `desc` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+
+--
+-- Extraindo dados da tabela `cor`
+--
+
+INSERT INTO `cor` (`id`, `desc`) VALUES
+(1, 'Amarelo'),
+(2, 'Azul'),
+(3, 'Vermelho'),
+(4, 'Prata'),
+(5, 'Preto'),
+(6, 'Branco'),
+(7, 'verde'),
+(8, 'Laranja'),
+(9, 'Rosa'),
+(10, 'Roxo');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `especie`
+--
+
+CREATE TABLE `especie` (
+  `id` int(11) NOT NULL auto_increment,
+  `desc` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Extraindo dados da tabela `especie`
+--
+
+INSERT INTO `especie` (`id`, `desc`) VALUES
+(1, 'Automovel'),
+(2, 'Motocicleta'),
+(3, 'Caminhao'),
+(4, 'Moto');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `forma_pg`
+--
+
+CREATE TABLE `forma_pg` (
+  `id` int(11) NOT NULL auto_increment,
+  `desc` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Extraindo dados da tabela `forma_pg`
+--
+
+INSERT INTO `forma_pg` (`id`, `desc`) VALUES
+(1, 'Pagamento de Funcionario'),
+(2, 'Combustivel'),
+(3, 'despesas do escritorio'),
+(4, 'Material de despesas');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `fornecedor`
+--
+
+CREATE TABLE `fornecedor` (
+  `id_fornecedor` int(11) NOT NULL auto_increment,
+  `cnpj` varchar(255) NOT NULL,
+  `razao` varchar(255) NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id_fornecedor`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Extraindo dados da tabela `fornecedor`
+--
+
+INSERT INTO `fornecedor` (`id_fornecedor`, `cnpj`, `razao`, `nome`) VALUES
+(1, '9985622222388-99', 'Posto Estrela', 'Estrela'),
+(2, '56221553322', 'POSTO ANDRADE moreia', 'POSTOS IPIRANGA');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `f_pagamento`
+--
+
+CREATE TABLE `f_pagamento` (
+  `id` int(11) NOT NULL auto_increment,
+  `desc` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Extraindo dados da tabela `f_pagamento`
+--
+
+INSERT INTO `f_pagamento` (`id`, `desc`) VALUES
+(1, 'Pagamento a Vista'),
+(2, 'Cartão de Crédito'),
+(3, 'Nota Promissória'),
+(4, '2º Parcela'),
+(5, '3º Parcela');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `instrutor`
+--
+
+CREATE TABLE `instrutor` (
+  `id_instrutor` int(11) NOT NULL auto_increment,
+  `aluno` int(11) default NULL,
+  `data` varchar(255) default NULL,
+  `nome` varchar(255) NOT NULL,
+  `apelido` varchar(255) default NULL,
+  `endereco` varchar(255) NOT NULL,
+  `bairro` varchar(255) NOT NULL,
+  `complemento` varchar(255) default NULL,
+  `municipio` varchar(255) NOT NULL,
+  `cpf` varchar(255) NOT NULL,
+  `cnh` varchar(255) default NULL,
+  `val_cnh` varchar(255) default NULL,
+  `renach` varchar(255) default NULL,
+  `telefone` varchar(255) default NULL,
+  `email` varchar(255) default NULL,
+  `apto` varchar(255) default NULL,
+  `aniversario` varchar(255) default NULL,
+  `observacao` varchar(255) default NULL,
+  PRIMARY KEY  (`id_instrutor`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
+
+--
+-- Extraindo dados da tabela `instrutor`
+--
+
+INSERT INTO `instrutor` (`id_instrutor`, `aluno`, `data`, `nome`, `apelido`, `endereco`, `bairro`, `complemento`, `municipio`, `cpf`, `cnh`, `val_cnh`, `renach`, `telefone`, `email`, `apto`, `aniversario`, `observacao`) VALUES
+(25, NULL, '2014-04-07', 'jose wilker', 'vadinho', 'RUA.09 Qd.90', 'Cohatrac IV', 'padaria aeromoça', 'Sao Luis', '9098998888988', '090990909090', '09090909090', '1212122', '(98) 88990077', 'tavinho.viegas@hotmail.com', 'categoria b', '23/08/2014', 'habilitado a mais de 10 anos'),
+(26, NULL, '2014-04-08', 'Jose de maria anchieta', 'anchieta', 'Rua 16 Qd.05', 'Cohatrac IV', 'Quadra de esporte', 'Sao Luis', '909.909.099-99', '8895222222222', '88452244411', '7888554499', '(64) 5545-5444 / 8877-7777', 'eneylton@hotmail.com', 'ojojojojojo', '2014-02-23', '4545454');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `legislacao`
+--
+
+CREATE TABLE `legislacao` (
+  `id` int(11) NOT NULL auto_increment,
+  `aluno` varchar(255) default NULL,
+  `data` date default NULL,
+  `hora` varchar(255) default NULL,
+  `hora1` varchar(255) NOT NULL,
+  `turno` varchar(255) default NULL,
+  `status` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Extraindo dados da tabela `legislacao`
+--
+
+INSERT INTO `legislacao` (`id`, `aluno`, `data`, `hora`, `hora1`, `turno`, `status`) VALUES
+(6, 'enexs de jesus barros', '2014-04-09', '11:11', '12:30', 'Matutino', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `log`
+--
+
+CREATE TABLE `log` (
+  `cod` int(100) unsigned NOT NULL auto_increment,
+  `usuario` varchar(200) default '0',
+  `nome` varchar(200) default '0',
+  `data` varchar(100) default '0',
+  `hora` varchar(100) default '0',
+  `op` varchar(200) default '0',
+  `ip` varchar(50) default '0',
+  PRIMARY KEY  (`cod`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2140 ;
+
+--
+-- Extraindo dados da tabela `log`
+--
+
+INSERT INTO `log` (`cod`, `usuario`, `nome`, `data`, `hora`, `op`, `ip`) VALUES
+(54, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '18:55:51', 'cadastrou um Instrutor !', '127.0.0.1'),
+(55, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '18:56:24', 'cadastrou um aluno', '127.0.0.1'),
+(56, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '18:57:37', 'cadastrou um aluno', '127.0.0.1'),
+(57, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '18:58:07', 'cadastrou um Instrutor !', '127.0.0.1'),
+(58, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '19:45:05', 'cadastrou um Instrutor !', '127.0.0.1'),
+(59, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '19:46:09', 'cadastrou um Instrutor !', '127.0.0.1'),
+(60, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '20:03:38', 'cadastrou um serviço !', '127.0.0.1'),
+(61, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '20:07:37', 'cadastrou um serviço !', '127.0.0.1'),
+(62, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '20:14:00', 'cadastrou um serviço !', '127.0.0.1'),
+(63, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '20:18:22', 'cadastrou um serviço !', '127.0.0.1'),
+(64, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '20:19:31', 'cadastrou um serviço !', '127.0.0.1'),
+(65, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '20:22:40', 'cadastrou um serviço !', '127.0.0.1'),
+(66, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '20:24:57', 'cadastrou um serviço !', '127.0.0.1'),
+(67, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '20:28:05', 'cadastrou um serviço !', '127.0.0.1'),
+(68, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '20:29:03', 'cadastrou um serviço !', '127.0.0.1'),
+(69, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '20:32:07', 'cadastrou um serviço !', '127.0.0.1'),
+(70, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '20:38:36', 'cadastrou um serviço !', '127.0.0.1'),
+(71, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '20:42:36', 'cadastrou um serviço !', '127.0.0.1'),
+(72, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '20:45:45', 'cadastrou um serviço !', '127.0.0.1'),
+(73, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '20:47:31', 'cadastrou um serviço !', '127.0.0.1'),
+(74, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '20:49:49', 'cadastrou um serviço !', '127.0.0.1'),
+(75, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '21:19:48', 'cadastrou um serviço !', '127.0.0.1'),
+(76, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '21:20:34', 'cadastrou um serviço !', '127.0.0.1'),
+(77, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '21:22:31', 'cadastrou um serviço !', '127.0.0.1'),
+(78, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '21:23:36', 'cadastrou um serviço !', '127.0.0.1'),
+(79, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '21:28:42', 'cadastrou um serviço !', '127.0.0.1'),
+(80, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '21:33:35', 'cadastrou um serviço !', '127.0.0.1'),
+(81, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '21:38:12', 'Consultou movimenta??o de documento !', '127.0.0.1'),
+(82, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '21:39:47', 'Consultou movimenta??o de documento !', '127.0.0.1'),
+(83, 'admin', 'Administrador', 'Domingo, 23 de Março de 2014', '21:40:14', 'Consultou movimentação de documento !', '127.0.0.1'),
+(791, 'maria', 'MARIA JOSE', 'Segunda, 07 de Abril de 2014', '22:25:53', 'Entrou no sistema', '127.0.0.1'),
+(792, 'maria', 'MARIA JOSE', 'Segunda, 07 de Abril de 2014', '22:25:53', 'Cosultou Operações !', '127.0.0.1'),
+(793, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:26:24', 'Entrou no sistema', '127.0.0.1'),
+(794, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:26:24', 'Cosultou Operações !', '127.0.0.1'),
+(795, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:05', 'Cosultou Operações !', '127.0.0.1'),
+(796, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:06', 'Cosultou Operações !', '127.0.0.1'),
+(797, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:06', 'Cosultou Operações !', '127.0.0.1'),
+(798, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:06', 'Cosultou Operações !', '127.0.0.1'),
+(799, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:06', 'Cosultou Operações !', '127.0.0.1'),
+(800, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:07', 'Cosultou Operações !', '127.0.0.1'),
+(801, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:07', 'Cosultou Operações !', '127.0.0.1'),
+(802, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:07', 'Cosultou Operações !', '127.0.0.1'),
+(803, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:07', 'Cosultou Operações !', '127.0.0.1'),
+(804, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:07', 'Cosultou Operações !', '127.0.0.1'),
+(805, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:07', 'Cosultou Operações !', '127.0.0.1'),
+(806, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:07', 'Cosultou Operações !', '127.0.0.1'),
+(807, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:07', 'Cosultou Operações !', '127.0.0.1'),
+(808, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:08', 'Cosultou Operações !', '127.0.0.1'),
+(809, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:08', 'Cosultou Operações !', '127.0.0.1'),
+(810, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:08', 'Cosultou Operações !', '127.0.0.1'),
+(811, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:08', 'Cosultou Operações !', '127.0.0.1'),
+(812, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:08', 'Cosultou Operações !', '127.0.0.1'),
+(813, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:08', 'Cosultou Operações !', '127.0.0.1'),
+(814, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:08', 'Cosultou Operações !', '127.0.0.1'),
+(815, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:08', 'Cosultou Operações !', '127.0.0.1'),
+(816, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:08', 'Cosultou Operações !', '127.0.0.1'),
+(817, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:08', 'Cosultou Operações !', '127.0.0.1'),
+(818, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:08', 'Cosultou Operações !', '127.0.0.1'),
+(819, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:27:08', 'Cosultou Operações !', '127.0.0.1'),
+(820, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:29:10', 'Entrou no sistema', '127.0.0.1'),
+(821, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:29:10', 'Cosultou Operações !', '127.0.0.1'),
+(822, '', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:30:33', 'Cadastro Um Novo Aluno !', '127.0.0.1'),
+(823, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:31:18', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(824, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:33:50', 'Cadastrou Aula Teórica !', '127.0.0.1'),
+(825, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:36:56', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(826, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:37:01', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(827, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:38:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(828, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:38:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(829, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:42:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(830, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:42:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(831, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:43:36', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(832, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:43:41', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(833, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:43:41', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(834, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:43:42', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(835, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:43:42', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(836, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:43:42', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(837, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:43:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(838, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:43:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(839, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:43:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(840, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:43:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(841, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:43:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(842, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:43:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(843, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:43:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(844, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:43:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(845, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:43:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(846, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:43:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(847, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:43:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(848, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:43:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(849, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:43:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(850, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:43:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(851, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:43:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(852, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:44:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(853, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:44:11', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(854, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(855, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:23', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(856, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:23', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(857, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(858, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(859, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(860, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(861, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(862, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(863, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(864, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(865, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(866, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(867, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(868, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(869, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:25', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(870, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(871, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(872, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(873, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(874, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(875, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(876, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(877, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(878, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(879, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(880, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(881, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(882, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(883, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(884, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(885, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(886, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(887, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(888, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(889, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(890, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(891, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(892, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(893, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:41', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(894, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(895, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(896, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(897, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(898, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(899, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(900, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(901, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(902, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(903, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(904, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(905, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(906, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(907, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:47', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(908, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:47', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(909, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:47', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(910, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:47', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(911, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:47', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(912, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:47', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(913, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:48', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(914, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:48', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(915, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:48', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(916, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:48', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(917, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:48', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(918, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:48', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(919, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:48', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(920, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:48', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(921, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:48', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(922, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(923, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(924, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(925, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(926, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(927, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(928, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(929, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(930, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:50', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(931, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:50', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(932, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:50', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(933, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:50', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(934, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:50', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(935, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:50', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(936, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:50', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(937, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:51', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(938, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:51', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(939, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:51', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(940, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:51', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(941, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:51', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(942, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:51', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(943, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:51', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(944, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:51', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(945, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:52', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(946, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:52', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(947, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:45:52', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(948, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:46:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(949, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:46:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(950, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:48:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(951, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:48:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(952, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:48:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(953, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:48:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(954, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:48:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(955, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:48:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(956, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:48:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(957, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:48:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(958, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:48:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(959, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:48:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(960, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:48:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(961, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:48:54', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(962, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:02', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(963, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:03', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(964, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:04', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(965, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:04', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(966, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:04', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(967, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:04', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(968, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:04', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(969, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(970, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(971, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(972, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(973, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(974, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:06', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(975, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:06', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(976, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:06', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(977, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:35', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(978, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:36', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(979, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:36', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(980, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(981, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(982, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(983, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(984, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(985, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:48', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(986, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:48', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(987, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:48', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(988, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(989, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:53', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(990, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:49:55', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(991, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:50:01', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(992, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:50:13', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(993, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:50:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(994, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:50:21', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(995, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:50:23', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(996, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:51:15', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(997, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:58:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(998, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:59:20', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(999, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:59:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1000, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:59:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1001, 'admin', 'Administrador', 'Segunda, 07 de Abril de 2014', '22:59:36', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1002, 'Maria', 'MARIA JOSE', 'Terça, 08 de Abril de 2014', '09:49:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1003, 'Maria', 'MARIA JOSE', 'Terça, 08 de Abril de 2014', '09:49:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1004, 'Maria', 'MARIA JOSE', 'Terça, 08 de Abril de 2014', '10:36:26', 'Cadastrou Aula Teórica !', '127.0.0.1'),
+(1005, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '10:38:49', 'Entrou no sistema', '127.0.0.1'),
+(1006, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '10:38:49', 'Cosultou Operações !', '127.0.0.1'),
+(1007, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '10:39:47', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1008, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '10:39:55', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1009, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '10:40:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1010, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '10:40:38', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1011, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '10:40:41', 'Cadastrou Aula Teórica !', '127.0.0.1'),
+(1012, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '11:36:24', 'Entrou no sistema', '127.0.0.1'),
+(1013, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '11:36:24', 'Cosultou Operações !', '127.0.0.1'),
+(1014, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '11:36:37', 'Cosultou Operações !', '127.0.0.1'),
+(1015, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:12:00', 'Cadastrou Aula Teórica !', '127.0.0.1'),
+(1016, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:19:35', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1017, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:19:41', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1018, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:19:50', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1019, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:20:01', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1020, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:20:51', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1021, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:20:53', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1022, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:20:55', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1023, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:21:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1024, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:27:52', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1025, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:29:38', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1026, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:30:42', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1027, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:30:59', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1028, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:32:15', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1029, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:32:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1030, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:32:38', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1031, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:32:40', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1032, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:32:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1033, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:32:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1034, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:32:51', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1035, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:33:10', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1036, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:33:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1037, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:34:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1038, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:34:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1039, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:34:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1040, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:34:53', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1041, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:34:56', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1042, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:34:58', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1043, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:35:13', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1044, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:35:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1045, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:35:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1046, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:35:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1047, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:35:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1048, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:41:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1049, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:50:34', 'Cosultou Operações !', '127.0.0.1'),
+(1050, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:54:25', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1051, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:57:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1052, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '12:57:54', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1053, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '13:04:59', 'Cosultou Operações !', '127.0.0.1'),
+(1054, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '13:57:56', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1055, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '13:57:58', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1056, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '13:58:01', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1057, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '13:58:04', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1058, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '13:58:11', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1059, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '13:58:23', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1060, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '13:59:01', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1061, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '14:00:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1062, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '14:00:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1063, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '14:00:35', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1064, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '14:01:09', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1065, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '14:02:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1066, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '14:03:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1067, '', 'Administrador', 'Terça, 08 de Abril de 2014', '15:06:29', 'Cadastro Um Novo Aluno !', '127.0.0.1'),
+(1068, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:06:35', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1069, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:08:53', 'Cadastrou Aula Teórica !', '127.0.0.1'),
+(1070, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:16:22', 'Cadastrou Aula Teórica !', '127.0.0.1'),
+(1071, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:16:31', 'Cadastrou Aula Teórica !', '127.0.0.1'),
+(1072, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:17:42', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1073, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:18:27', 'Cosultou Oções Realizada pelo Usuário !', '127.0.0.1'),
+(1074, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:20:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1075, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:20:27', 'Cosultou Oções Realizada pelo Usuário !', '127.0.0.1'),
+(1076, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:20:29', 'Cosultou Oções Realizada pelo Usuário !', '127.0.0.1'),
+(1077, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:20:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1078, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:20:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1079, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:21:21', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1080, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:21:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1081, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:21:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1082, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:21:25', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1083, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:21:52', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1084, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:21:55', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1085, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:21:56', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1086, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:21:57', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1087, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:21:58', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1088, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:22:20', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1089, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:22:47', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1090, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:24:00', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1091, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:29:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1092, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:30:09', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1093, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:30:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1094, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:33:41', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1095, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:33:51', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1096, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:33:56', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1097, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:36:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1098, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:36:59', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1099, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:37:03', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1100, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:37:04', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1101, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:37:04', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1102, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:37:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1103, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:37:59', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1104, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:39:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1105, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:39:57', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1106, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:40:04', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1107, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:40:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1108, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:40:06', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1109, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:40:11', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1110, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:43:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1111, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:48:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1112, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:48:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1113, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:48:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1114, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:48:48', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1115, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:48:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1116, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:50:14', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1117, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:50:55', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1118, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:51:00', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1119, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:51:42', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1120, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:51:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1121, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:51:48', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1122, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:53:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1123, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:54:09', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1124, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:54:52', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1125, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:55:41', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1126, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:58:59', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1127, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '15:59:01', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1128, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:48:36', 'Entrou no sistema', '127.0.0.1'),
+(1129, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:48:36', 'Cosultou Operações !', '127.0.0.1'),
+(1130, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:51:09', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1131, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:51:09', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1132, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:51:09', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1133, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:51:10', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1134, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:51:10', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1135, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:51:10', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1136, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:51:10', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1137, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:51:13', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1138, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:51:13', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1139, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:51:13', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1140, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:51:13', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1141, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:51:15', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1142, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:51:48', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1143, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:51:57', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1144, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:53:07', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1145, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:53:47', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1146, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:53:54', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1147, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:55:16', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1148, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:57:09', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1149, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:57:48', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1150, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:59:12', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1151, 'admin', 'Administrador', 'Terça, 08 de Abril de 2014', '23:59:58', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1152, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:00:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1153, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:00:57', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1154, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:06:55', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1155, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:11:00', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1156, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:11:00', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1157, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:11:00', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1158, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:11:00', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1159, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:11:00', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1160, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:11:00', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1161, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:11:00', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1162, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:11:00', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1163, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:11:00', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1164, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:11:13', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1165, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:11:35', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1166, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:12:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1167, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:13:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1168, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:13:58', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1169, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:18:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1170, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1171, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1172, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1173, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1174, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1175, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1176, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1177, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1178, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:39', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1179, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:39', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1180, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:39', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1181, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:40', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1182, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:40', 'Cadastrou um novo Servico !', '127.0.0.1');
+INSERT INTO `log` (`cod`, `usuario`, `nome`, `data`, `hora`, `op`, `ip`) VALUES
+(1183, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:40', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1184, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:40', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1185, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:40', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1186, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:40', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1187, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:40', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1188, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:40', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1189, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:40', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1190, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:40', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1191, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:40', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1192, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:42', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1193, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:42', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1194, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:42', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1195, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:42', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1196, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:42', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1197, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:19:53', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1198, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1199, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1200, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1201, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1202, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1203, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1204, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1205, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1206, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1207, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1208, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1209, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1210, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1211, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1212, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1213, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1214, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1215, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1216, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1217, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1218, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1219, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:56', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1220, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:57', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1221, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:57', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1222, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:57', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1223, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:20:57', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1224, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:17', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1225, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:17', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1226, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:17', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1227, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1228, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1229, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1230, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1231, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1232, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1233, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1234, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1235, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1236, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1237, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1238, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1239, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1240, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:21', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1241, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:23', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1242, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:23', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1243, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:23', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1244, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:23', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1245, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:23', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1246, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:23', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1247, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1248, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1249, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1250, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1251, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1252, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1253, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1254, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1255, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1256, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1257, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1258, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1259, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1260, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1261, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1262, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1263, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1264, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1265, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1266, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1267, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1268, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1269, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1270, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:23:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1271, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:24:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1272, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:24:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1273, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:24:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1274, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:24:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1275, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:24:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1276, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:24:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1277, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:24:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1278, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:24:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1279, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:24:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1280, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:24:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1281, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:24:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1282, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:24:57', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1283, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1284, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1285, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1286, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1287, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1288, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:20', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1289, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:20', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1290, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:20', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1291, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:20', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1292, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:20', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1293, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:21', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1294, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:21', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1295, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:21', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1296, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:21', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1297, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:21', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1298, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1299, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1300, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1301, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1302, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1303, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1304, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1305, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:23', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1306, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:23', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1307, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:23', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1308, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1309, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1310, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1311, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1312, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1313, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1314, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1315, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1316, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1317, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1318, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1319, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1320, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1321, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1322, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1323, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1324, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1325, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1326, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1327, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1328, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1329, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1330, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1331, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1332, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1333, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1334, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1335, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1336, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:27:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1337, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:28:20', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1338, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:28:20', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1339, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:28:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1340, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:28:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1341, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:28:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1342, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:28:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1343, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:28:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1344, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:28:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1345, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:28:48', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1346, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:28:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1347, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:28:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1348, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:33:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1349, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:34:07', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1350, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:34:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1351, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:34:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1352, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:35:38', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1353, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:38:11', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1354, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:39:16', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1355, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:39:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1356, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:40:38', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1357, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:41:36', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1358, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:42:39', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1359, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:43:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1360, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:48:50', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1361, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:49:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1362, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:51:01', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1363, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:51:13', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1364, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:52:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1365, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:52:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1366, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:52:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1367, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:52:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1368, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:52:50', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1369, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:52:50', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1370, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:52:58', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1371, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:52:58', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1372, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:53:14', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1373, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:53:15', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1374, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:53:15', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1375, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '00:53:41', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1376, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:01:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1377, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:01:59', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1378, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:04:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1379, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:05:47', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1380, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:06:14', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1381, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:09:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1382, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:10:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1383, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:10:53', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1384, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:14:08', 'Entrou no sistema', '127.0.0.1'),
+(1385, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:14:08', 'Cosultou Operações !', '127.0.0.1'),
+(1386, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:14:54', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1387, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:15:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1388, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:15:06', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1389, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:15:07', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1390, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:15:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1391, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:15:10', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1392, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:16:39', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1393, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:17:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1394, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:18:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1395, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:18:15', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1396, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:18:16', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1397, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:18:18', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1398, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:18:47', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1399, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:18:48', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1400, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:18:53', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1401, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:18:58', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1402, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:19:03', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1403, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:19:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1404, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:19:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1405, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:20:17', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1406, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:21:13', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1407, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:23:10', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1408, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '01:23:11', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1409, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '10:50:43', 'Entrou no sistema', '127.0.0.1'),
+(1410, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '10:50:43', 'Cosultou Operações !', '127.0.0.1'),
+(1411, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '10:51:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1412, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '10:52:18', 'Cosultou Operações !', '127.0.0.1'),
+(1413, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '10:52:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1414, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '10:53:00', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1415, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '10:54:59', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1416, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '10:55:11', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1417, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '10:55:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1418, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '10:55:38', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1419, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:00:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1420, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:00:52', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1421, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:00:56', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1422, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:00:58', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1423, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:00:59', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1424, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:00:59', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1425, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:00:59', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1426, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:00:59', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1427, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:01:01', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1428, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:01:02', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1429, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:01:07', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1430, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:01:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1431, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:01:18', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1432, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:04:59', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1433, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:05:09', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1434, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:05:18', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1435, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:11:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1436, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:12:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1437, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:12:25', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1438, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:12:25', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1439, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:12:25', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1440, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:12:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1441, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:13:20', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1442, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:14:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1443, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:22:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1444, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:24:18', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1445, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:25:16', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1446, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:03', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1447, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:03', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1448, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:04', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1449, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:04', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1450, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1451, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1452, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1453, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1454, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1455, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1456, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1457, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1458, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1459, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1460, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1461, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1462, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:06', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1463, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:06', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1464, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:06', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1465, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:07', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1466, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:07', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1467, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:07', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1468, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1469, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1470, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1471, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1472, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1473, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1474, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1475, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1476, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1477, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1478, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1479, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1480, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1481, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:09', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1482, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:09', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1483, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:09', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1484, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:10', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1485, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:10', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1486, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:10', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1487, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:10', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1488, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:11', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1489, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:11', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1490, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:11', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1491, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:11', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1492, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:11', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1493, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:11', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1494, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:11', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1495, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:11', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1496, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:11', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1497, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:11', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1498, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:11', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1499, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:11', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1500, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:12', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1501, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:12', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1502, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:12', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1503, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:12', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1504, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:12', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1505, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:12', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1506, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:12', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1507, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:12', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1508, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:12', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1509, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:12', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1510, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:12', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1511, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:12', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1512, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:12', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1513, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:12', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1514, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:12', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1515, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:12', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1516, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:12', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1517, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:12', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1518, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:12', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1519, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:12', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1520, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:13', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1521, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:13', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1522, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:14', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1523, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:14', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1524, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:15', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1525, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:15', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1526, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:15', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1527, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:16', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1528, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:16', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1529, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:16', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1530, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:16', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1531, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:16', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1532, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:16', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1533, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:16', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1534, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:17', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1535, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:17', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1536, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:17', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1537, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:17', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1538, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:17', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1539, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:17', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1540, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:17', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1541, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:18', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1542, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:18', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1543, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:18', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1544, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:18', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1545, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:18', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1546, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:18', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1547, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:18', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1548, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1549, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1550, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1551, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:20', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1552, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:20', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1553, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:20', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1554, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:20', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1555, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:21', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1556, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:21', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1557, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:21', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1558, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1559, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1560, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1561, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:23', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1562, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:23', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1563, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:23', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1564, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:23', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1565, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1566, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1567, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1568, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:25', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1569, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:25', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1570, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:25', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1571, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:25', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1572, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1573, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1574, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1575, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1576, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1577, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1578, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1579, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1580, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1581, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1582, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1583, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1584, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1585, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1586, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1587, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1588, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1589, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1590, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1591, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1592, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1593, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1594, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1595, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1596, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1597, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1598, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1599, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1600, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1601, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:29', 'Cadastrou um novo Servico !', '127.0.0.1');
+INSERT INTO `log` (`cod`, `usuario`, `nome`, `data`, `hora`, `op`, `ip`) VALUES
+(1602, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1603, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1604, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1605, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1606, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1607, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1608, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1609, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:36', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1610, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:36', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1611, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1612, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1613, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:38', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1614, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:38', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1615, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:38', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1616, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:39', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1617, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:39', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1618, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:40', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1619, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:40', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1620, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:40', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1621, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:41', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1622, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:41', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1623, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:42', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1624, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:42', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1625, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:42', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1626, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1627, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1628, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1629, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1630, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1631, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1632, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:26:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1633, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:27:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1634, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:29:03', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1635, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1636, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1637, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1638, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1639, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1640, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1641, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:35', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1642, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:35', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1643, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:35', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1644, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:35', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1645, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:36', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1646, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:36', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1647, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:36', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1648, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:36', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1649, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:36', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1650, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:36', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1651, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1652, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1653, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1654, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1655, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1656, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1657, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:38', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1658, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:38', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1659, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:38', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1660, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:39', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1661, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:39', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1662, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:39', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1663, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:39', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1664, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:39', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1665, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:40', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1666, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:42', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1667, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1668, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1669, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1670, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1671, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1672, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1673, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1674, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:31:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1675, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:32:02', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1676, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:32:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1677, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:35:01', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1678, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:35:13', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1679, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:35:20', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1680, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:37:39', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1681, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:37:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1682, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:37:47', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1683, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:37:48', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1684, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:37:48', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1685, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:37:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1686, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:37:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1687, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:37:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1688, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:38:16', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1689, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:43:17', 'Cosultou Operações !', '127.0.0.1'),
+(1690, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:43:21', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1691, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:48:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1692, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:48:15', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1693, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:48:21', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1694, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:49:03', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1695, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:49:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1696, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:53:35', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1697, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '11:53:50', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1698, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '12:10:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1699, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '12:22:23', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1700, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '12:26:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1701, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '12:27:52', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1702, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '12:28:35', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1703, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '12:33:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1704, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '12:33:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1705, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '12:34:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1706, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '12:35:52', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1707, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '12:39:14', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1708, 'Admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '12:39:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1709, 'maria', 'MARIA JOSE', 'Quarta, 09 de Abril de 2014', '13:42:57', 'Entrou no sistema', '127.0.0.1'),
+(1710, 'maria', 'MARIA JOSE', 'Quarta, 09 de Abril de 2014', '13:42:57', 'Cosultou Operações !', '127.0.0.1'),
+(1711, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:46:01', 'Entrou no sistema', '127.0.0.1'),
+(1712, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:46:01', 'Cosultou Operações !', '127.0.0.1'),
+(1713, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:46:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1714, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:48:33', 'Cadastrou Aula Teórica !', '127.0.0.1'),
+(1715, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:48:55', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1716, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:49:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1717, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:49:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1718, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:50:17', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1719, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:51:03', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1720, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:51:10', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1721, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:53:17', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1722, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:53:20', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1723, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:53:21', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1724, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:53:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1725, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:53:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1726, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:53:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1727, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:53:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1728, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:53:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1729, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:53:50', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1730, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:53:58', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1731, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:55:00', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1732, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:55:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1733, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:55:40', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1734, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:55:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1735, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:56:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1736, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:57:09', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1737, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:58:03', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1738, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '13:59:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1739, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:01:17', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1740, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:01:23', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1741, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:01:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1742, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:01:58', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1743, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:02:01', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1744, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:02:02', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1745, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:06:17', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1746, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:06:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1747, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:06:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1748, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:06:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1749, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:06:56', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1750, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:07:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1751, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:07:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1752, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:07:40', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1753, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:07:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1754, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:09:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1755, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:09:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1756, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:09:36', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1757, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:09:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1758, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:09:38', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1759, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:09:38', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1760, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:11:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1761, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:11:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1762, 'admin', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:11:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1763, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:38:24', 'Entrou no sistema', '127.0.0.1'),
+(1764, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:38:24', 'Cosultou Operações !', '127.0.0.1'),
+(1765, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:42:41', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1766, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:44:07', 'Cadastrou Aula Teórica !', '127.0.0.1'),
+(1767, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:44:35', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1768, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:45:01', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1769, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:45:07', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1770, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:45:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1771, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:46:56', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1772, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:47:09', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1773, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1774, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1775, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1776, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1777, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1778, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1779, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1780, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1781, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1782, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1783, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1784, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1785, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1786, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1787, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1788, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1789, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1790, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1791, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1792, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1793, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1794, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1795, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1796, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1797, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1798, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1799, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1800, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1801, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1802, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1803, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1804, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1805, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1806, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1807, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1808, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1809, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1810, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1811, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1812, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1813, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1814, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1815, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1816, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1817, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1818, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1819, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1820, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:35', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1821, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:36', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1822, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:36', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1823, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:36', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1824, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1825, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1826, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1827, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1828, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:38', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1829, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:39', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1830, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:39', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1831, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:40', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1832, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:40', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1833, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:40', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1834, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:40', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1835, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:40', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1836, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:41', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1837, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:42', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1838, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1839, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1840, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1841, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:49:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1842, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:56:07', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1843, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:56:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1844, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:56:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1845, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:56:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1846, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:56:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1847, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:56:53', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1848, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:56:57', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1849, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:56:57', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1850, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:56:58', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1851, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:56:58', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1852, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:56:58', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1853, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:56:58', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1854, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:56:59', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1855, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:56:59', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1856, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:56:59', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1857, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:56:59', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1858, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:56:59', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1859, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:57:00', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1860, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:57:00', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1861, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:57:00', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1862, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:57:00', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1863, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:57:00', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1864, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:57:01', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1865, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:57:01', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1866, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:57:01', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1867, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:57:01', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1868, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:57:01', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1869, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:57:02', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1870, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:57:02', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1871, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:57:02', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1872, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:57:07', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1873, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:57:57', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1874, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:58:12', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1875, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:58:24', 'Cadastrou Aula Teórica !', '127.0.0.1'),
+(1876, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:59:47', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1877, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:59:50', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1878, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:59:51', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1879, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '14:59:58', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1880, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:00:01', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1881, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:00:38', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1882, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:01:03', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1883, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:01:06', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1884, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:01:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1885, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:01:19', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1886, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:01:49', 'Cosultou Operações !', '127.0.0.1'),
+(1887, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:25:11', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1888, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:26:15', 'Cadastrou Aula Teórica !', '127.0.0.1'),
+(1889, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:27:11', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1890, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:28:36', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1891, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:32:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1892, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:32:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1893, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:32:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1894, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:32:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1895, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:45:39', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1896, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:45:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1897, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:45:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1898, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:45:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1899, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:45:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1900, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:45:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1901, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:45:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1902, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:45:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1903, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:45:54', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1904, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:45:58', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1905, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:46:01', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1906, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:46:02', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1907, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:46:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1908, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:47:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1909, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:48:23', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1910, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:49:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1911, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:51:26', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1912, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:51:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1913, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:51:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1914, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:51:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1915, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:51:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1916, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:51:28', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1917, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:51:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1918, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:52:04', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1919, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:52:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1920, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:52:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1921, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:18', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1922, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1923, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1924, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1925, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1926, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1927, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1928, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1929, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1930, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1931, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1932, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:38', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1933, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:39', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1934, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:42', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1935, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1936, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1937, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1938, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1939, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1940, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1941, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1942, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1943, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1944, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1945, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:48', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1946, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:52', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1947, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:52', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1948, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:53', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1949, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:53', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1950, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:54:54', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1951, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:55:13', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1952, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:55:59', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1953, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:56:02', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1954, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:56:04', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1955, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:56:35', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1956, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:56:36', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1957, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:56:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1958, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:56:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1959, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:56:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1960, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:56:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1961, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:56:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1962, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:56:37', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1963, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:56:38', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1964, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:56:38', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1965, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:56:38', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1966, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:57:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1967, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:58:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1968, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:58:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1969, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:58:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1970, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:58:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1971, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:58:47', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1972, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '15:58:48', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1973, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:08:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1974, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:08:55', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1975, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:08:57', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1976, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:08:57', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1977, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:08:57', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1978, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:08:57', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1979, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:08:57', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1980, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:08:58', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1981, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:08:58', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1982, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:09:10', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1983, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:11:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1984, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:12:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1985, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:12:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1986, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:12:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1987, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:12:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1988, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:12:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1989, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:12:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1990, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:12:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1991, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:12:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1992, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:12:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1993, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:12:33', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1994, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:12:35', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1995, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:13:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1996, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:13:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1997, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:13:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1998, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:13:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(1999, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:13:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2000, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:13:50', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2001, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:13:50', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2002, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:13:50', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2003, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:13:50', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2004, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:13:57', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2005, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:19:06', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2006, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:19:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2007, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:21:29', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2008, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:23:02', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2009, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:23:18', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2010, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:23:22', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2011, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:23:53', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2012, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:24:35', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2013, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:25:52', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2014, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:51:06', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2015, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:51:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2016, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:51:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2017, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:51:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2018, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:51:09', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2019, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:51:09', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2020, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:51:09', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2021, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:51:09', 'Cadastrou um novo Servico !', '127.0.0.1');
+INSERT INTO `log` (`cod`, `usuario`, `nome`, `data`, `hora`, `op`, `ip`) VALUES
+(2022, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:53:05', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2023, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:53:20', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2024, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:53:21', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2025, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:53:56', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2026, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:55:20', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2027, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:55:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2028, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:55:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2029, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:55:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2030, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:55:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2031, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:55:47', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2032, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:55:47', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2033, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:55:47', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2034, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:55:47', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2035, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:56:01', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2036, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:57:14', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2037, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:57:20', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2038, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:57:27', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2039, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:57:30', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2040, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:57:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2041, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:57:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2042, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:57:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2043, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:57:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2044, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:57:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2045, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:57:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2046, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:57:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2047, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:57:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2048, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:57:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2049, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:57:32', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2050, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:57:34', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2051, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:58:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2052, 'ADMIN', 'Administrador', 'Quarta, 09 de Abril de 2014', '16:59:14', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2053, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '09:32:07', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2054, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '09:32:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2055, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '09:32:08', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2056, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '09:32:09', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2057, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '09:32:09', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2058, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '09:32:09', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2059, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '09:32:09', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2060, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '09:32:10', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2061, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '09:32:10', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2062, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '09:32:11', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2063, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '13:50:38', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2064, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '13:50:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2065, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '13:50:56', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2066, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '13:50:56', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2067, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '13:51:00', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2068, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '13:51:41', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2069, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '13:51:42', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2070, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '13:51:47', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2071, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '13:51:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2072, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '13:51:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2073, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '13:51:50', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2074, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '13:51:50', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2075, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '13:51:51', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2076, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '13:51:53', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2077, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '13:59:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2078, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '16:41:58', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2079, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '16:42:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2080, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '16:42:47', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2081, 'ADMIN', 'Administrador', 'Quinta, 10 de Abril de 2014', '16:54:09', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2082, '', '', 'Quinta, 10 de Abril de 2014', '16:54:47', 'Cosultou Operações !', '127.0.0.1'),
+(2083, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:54:55', 'Entrou no sistema', '127.0.0.1'),
+(2084, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:54:55', 'Cosultou Operações !', '127.0.0.1'),
+(2085, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:56:10', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2086, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:56:15', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2087, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:56:18', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2088, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:56:21', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2089, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:56:42', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2090, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:56:44', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2091, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:56:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2092, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:57:35', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2093, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:57:42', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2094, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:57:57', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2095, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:58:00', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2096, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:58:01', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2097, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:58:36', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2098, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:58:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2099, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:58:50', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2100, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:59:15', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2101, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:59:36', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2102, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:59:38', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2103, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:59:42', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2104, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:59:43', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2105, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:59:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2106, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:59:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2107, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:59:46', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2108, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:59:47', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2109, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:59:47', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2110, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '16:59:48', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2111, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '17:00:02', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2112, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '17:00:11', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2113, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '17:01:14', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2114, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '17:01:41', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2115, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '17:01:49', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2116, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '17:02:20', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2117, 'maria', 'MARIA JOSE', 'Quinta, 10 de Abril de 2014', '17:02:24', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2118, 'Eneylton', 'Eneylton de Jesus Campos Barros', 'Quinta, 10 de Abril de 2014', '17:07:58', 'Entrou no sistema', '127.0.0.1'),
+(2119, 'Eneylton', 'Eneylton de Jesus Campos Barros', 'Quinta, 10 de Abril de 2014', '17:07:58', 'Cosultou Operações !', '127.0.0.1'),
+(2120, 'admin', 'Administrador', 'Quinta, 10 de Abril de 2014', '17:08:08', 'Entrou no sistema', '127.0.0.1'),
+(2121, 'admin', 'Administrador', 'Quinta, 10 de Abril de 2014', '17:08:08', 'Cosultou Operações !', '127.0.0.1'),
+(2122, 'admin', 'Administrador', 'Quinta, 10 de Abril de 2014', '17:28:31', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2123, 'admin', 'Administrador', 'Quinta, 10 de Abril de 2014', '17:29:21', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2124, 'admin', 'Administrador', 'Quinta, 10 de Abril de 2014', '17:35:42', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2125, 'admin', 'Administrador', 'Quinta, 10 de Abril de 2014', '17:37:35', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2126, 'admin', 'Administrador', 'Quinta, 10 de Abril de 2014', '17:37:39', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2127, 'admin', 'Administrador', 'Quinta, 10 de Abril de 2014', '17:37:40', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2128, 'admin', 'Administrador', 'Quinta, 10 de Abril de 2014', '17:37:45', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2129, 'admin', 'Administrador', 'Quinta, 10 de Abril de 2014', '17:39:22', 'Cadastrou Aula Teórica !', '127.0.0.1'),
+(2130, 'admin', 'Administrador', 'Quinta, 10 de Abril de 2014', '17:39:31', 'Cadastrou Aula Teórica !', '127.0.0.1'),
+(2131, 'admin', 'Administrador', 'Quinta, 10 de Abril de 2014', '17:39:46', 'Cadastrou Aula Teórica !', '127.0.0.1'),
+(2132, 'admin', 'Administrador', 'Quinta, 10 de Abril de 2014', '17:39:46', 'Cadastrou Aula Teórica !', '127.0.0.1'),
+(2133, 'admin', 'Administrador', 'Quinta, 10 de Abril de 2014', '17:39:46', 'Cadastrou Aula Teórica !', '127.0.0.1'),
+(2134, 'admin', 'Administrador', 'Quinta, 10 de Abril de 2014', '17:41:20', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2135, 'admin', 'Administrador', 'Quinta, 10 de Abril de 2014', '17:41:24', 'Cadastrou Aula Teórica !', '127.0.0.1'),
+(2136, 'admin', 'Administrador', 'Quinta, 10 de Abril de 2014', '17:50:49', 'Cosultou Operações !', '127.0.0.1'),
+(2137, 'admin', 'Administrador', 'Quinta, 10 de Abril de 2014', '17:50:53', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2138, 'admin', 'Administrador', 'Quinta, 10 de Abril de 2014', '17:50:56', 'Cadastrou um novo Servico !', '127.0.0.1'),
+(2139, 'admin', 'Administrador', 'Quinta, 10 de Abril de 2014', '17:50:58', 'Cadastrou um novo Servico !', '127.0.0.1');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `meses`
+--
+
+CREATE TABLE `meses` (
+  `id_mes` int(11) NOT NULL auto_increment,
+  `descricao` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id_mes`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+
+--
+-- Extraindo dados da tabela `meses`
+--
+
+INSERT INTO `meses` (`id_mes`, `descricao`) VALUES
+(1, 'JANEIRO'),
+(2, 'FEVEREIRO'),
+(3, 'MARÇO'),
+(4, 'ABRIL'),
+(5, 'MAIO'),
+(6, 'JUNHO'),
+(7, 'JULHO'),
+(8, 'AGOSTO'),
+(9, 'SETEMBRO'),
+(10, 'OUTUBRO'),
+(11, 'NOVEMBRO'),
+(12, 'DEZEMBRO');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `movimento`
+--
+
+CREATE TABLE `movimento` (
+  `id_mov` int(11) NOT NULL auto_increment,
+  `id_cliente` int(11) NOT NULL,
+  `data` varchar(255) NOT NULL,
+  `cliente` varchar(255) NOT NULL,
+  `servico` varchar(255) NOT NULL,
+  `tipo` varchar(255) NOT NULL,
+  `categoria` varchar(255) NOT NULL,
+  `descricao` varchar(255) NOT NULL,
+  `valor` varchar(255) NOT NULL,
+  `valor2` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `mes` varchar(255) NOT NULL,
+  `fornecedor` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id_mov`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=638 ;
+
+--
+-- Extraindo dados da tabela `movimento`
+--
+
+INSERT INTO `movimento` (`id_mov`, `id_cliente`, `data`, `cliente`, `servico`, `tipo`, `categoria`, `descricao`, `valor`, `valor2`, `status`, `mes`, `fornecedor`) VALUES
+(637, 0, '', '', '', '', '', '', '', '', '', '', ''),
+(633, 0, '', '', '', '', '', '', '', '', '', '', ''),
+(634, 0, '2014-04-09', 'enexs de jesus barros', '1 HABILITAÇÃO CAT. B ', '0', 'Pagamento a Vista', 'MATRICULADO', '1400.55', '', '1', 'Abril', ''),
+(635, 0, '', '', '', '', '', '', '', '', '', '', ''),
+(636, 0, '2014-04-09', 'ana rosa fiquenni de oliveira', '1 HABILITACAO CAT. AB ', '0', 'Pagamento a Vista', 'matriculado', '1855.55', '', '1', 'Abril', '');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `municipio`
+--
+
+CREATE TABLE `municipio` (
+  `id` int(11) NOT NULL auto_increment,
+  `municipio` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `municipio`
+--
+
+INSERT INTO `municipio` (`id`, `municipio`) VALUES
+(1, 'São luis');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `nota`
+--
+
+CREATE TABLE `nota` (
+  `int_id` int(10) unsigned NOT NULL auto_increment,
+  `id_cliente` int(11) NOT NULL,
+  `id_servico` varchar(255) NOT NULL,
+  `data` varchar(255) NOT NULL,
+  `tipo` varchar(255) NOT NULL,
+  `categoria` varchar(255) NOT NULL,
+  `forma_pag` varchar(255) NOT NULL,
+  `descricao` varchar(255) NOT NULL,
+  `valor` varchar(255) NOT NULL,
+  `valor2` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `mes` varchar(255) NOT NULL,
+  `cliente` varchar(255) NOT NULL,
+  `venci` varchar(255) NOT NULL,
+  PRIMARY KEY  (`int_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Extraindo dados da tabela `nota`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `online`
+--
+
+CREATE TABLE `online` (
+  `id` int(11) NOT NULL auto_increment,
+  `entrada` varchar(100) NOT NULL default '',
+  `ip` varchar(200) NOT NULL default '',
+  `ult_click` varchar(100) NOT NULL default '',
+  `sessao` varchar(200) NOT NULL default '',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+
+--
+-- Extraindo dados da tabela `online`
+--
+
+INSERT INTO `online` (`id`, `entrada`, `ip`, `ult_click`, `sessao`) VALUES
+(24, '1397163049', '127.0.0.1', '1397163049', '7bf5345e8fb8f8ee6b364f8e30d68219');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `sala`
+--
+
+CREATE TABLE `sala` (
+  `id_sala` int(11) NOT NULL auto_increment,
+  `prof` varchar(255) NOT NULL,
+  `turno` varchar(255) NOT NULL,
+  `periodo1` date NOT NULL,
+  `periodo2` date NOT NULL,
+  `descricao` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id_sala`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Extraindo dados da tabela `sala`
+--
+
+INSERT INTO `sala` (`id_sala`, `prof`, `turno`, `periodo1`, `periodo2`, `descricao`) VALUES
+(1, 'Jose de Maria', 'Matutino', '2014-03-31', '2014-04-24', 'Sala 01'),
+(2, 'Jose de Ribamar', 'Noturno', '2014-04-02', '2014-04-25', 'Sala 02');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `serv`
+--
+
+CREATE TABLE `serv` (
+  `int_id` int(10) unsigned NOT NULL auto_increment,
+  `id_cliente` int(11) NOT NULL,
+  `id_servico` varchar(255) NOT NULL,
+  `data` varchar(255) NOT NULL,
+  `tipo` varchar(255) NOT NULL,
+  `categoria` varchar(255) NOT NULL,
+  `descricao` varchar(255) NOT NULL,
+  `valor` varchar(255) default NULL,
+  `valor2` varchar(255) default NULL,
+  `status` varchar(255) NOT NULL,
+  `mes` varchar(255) NOT NULL,
+  `cliente` varchar(255) NOT NULL,
+  `fornecedor` varchar(255) NOT NULL,
+  `venci` date NOT NULL,
+  PRIMARY KEY  (`int_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=47 ;
+
+--
+-- Extraindo dados da tabela `serv`
+--
+
+INSERT INTO `serv` (`int_id`, `id_cliente`, `id_servico`, `data`, `tipo`, `categoria`, `descricao`, `valor`, `valor2`, `status`, `mes`, `cliente`, `fornecedor`, `venci`) VALUES
+(45, 0, '1 HABILITAÇÃO CAT. B ', '2014-04-09', '0', 'Pagamento a Vista', 'MATRICULADO', '1400.55', NULL, '1', 'Abril', 'enexs de jesus barros', '', '2014-04-09'),
+(46, 0, '1 HABILITACAO CAT. AB ', '2014-04-09', '0', 'Pagamento a Vista', 'matriculado', '1855.55', NULL, '1', 'Abril', 'ana rosa fiquenni de oliveira', '', '2014-04-09');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `servicos`
+--
+
+CREATE TABLE `servicos` (
+  `id` int(11) NOT NULL auto_increment,
+  `servico` varchar(255) NOT NULL,
+  `valor` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
+
+--
+-- Extraindo dados da tabela `servicos`
+--
+
+INSERT INTO `servicos` (`id`, `servico`, `valor`) VALUES
+(1, '1 HABILITACAO CAT. A', 'R$ 850,00'),
+(2, '1 HABILITACAO CAT. AB', 'R$ 1700,00'),
+(3, '1 HABILITAÇÃO CAT. B', 'R$ 1400,00'),
+(4, 'ADICAO DE CAT. A', 'R$ 650,00'),
+(5, 'ADICAO DE CAT. B', 'R$ 850,00'),
+(6, 'Aquisição Carteira Cat. A', 'R$ 600,00'),
+(7, 'Aquisição Carteira Cat. B', 'R$ 800,00'),
+(8, 'AULA EXTRA CAT. A', 'R$ 22,00'),
+(9, 'AULA EXTRA CAT. B', 'R$ 42,00'),
+(10, 'AULA EXTRA CAT. C', 'R$ 60,00'),
+(11, 'AULA EXTRA CAT. D', 'R$ 55,00'),
+(12, 'AULA EXTRA CAT. E', 'R$ 60,00'),
+(13, 'AVERBACAO COM RENOVACAO', 'R$ 200,00'),
+(14, 'CAMINHÃO EXAME CAT. C / 01 AULA', 'R$ 150,00'),
+(15, 'CARRETA EXAME CAT. E', 'R$ 100,00'),
+(16, 'CARRO EXAME CAT. B', 'R$ 70,00'),
+(17, 'CURSO DE ATUALIZACÃO / RENOVACAO', 'R$ 150,00'),
+(18, 'CURSO DE DIRECAO DEFENSIVA', 'R$ 80,00'),
+(19, 'CURSO DE INFRATOR', 'R$ 250,00'),
+(20, 'CURSO DE RECICLAGEM', 'R$ 250,00'),
+(21, 'LICENCA DE APREENDIZAGEM', 'R$ 35,00'),
+(22, 'MATRICULA', 'R$ 150,00'),
+(23, 'MOTO EXAME', 'R$ 50,00'),
+(24, 'MUDANCA DE CATEGORA AC', 'R$ 1.400,00'),
+(25, 'MUDANCA DE CATEGORA AD C/ TAXAS', 'R$ 1.250,00'),
+(26, 'MUDANCA DE CATEGORA AD S/ TAXAS', 'R$ 1.000,00');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `trafego`
+--
+
+CREATE TABLE `trafego` (
+  `id` int(11) NOT NULL auto_increment,
+  `aluno` varchar(255) default NULL,
+  `data` date default NULL,
+  `hora` varchar(255) default NULL,
+  `hora1` varchar(255) NOT NULL,
+  `turno` varchar(255) default NULL,
+  `status` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Extraindo dados da tabela `trafego`
+--
+
+INSERT INTO `trafego` (`id`, `aluno`, `data`, `hora`, `hora1`, `turno`, `status`) VALUES
+(5, 'enexs de jesus barros', '2014-04-10', '12:00', '13:00', 'vespertino', '2');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `turma`
+--
+
+CREATE TABLE `turma` (
+  `id_turma` int(11) NOT NULL auto_increment,
+  `id_aluno` varchar(255) NOT NULL,
+  `sala` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id_turma`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
+
+--
+-- Extraindo dados da tabela `turma`
+--
+
+INSERT INTO `turma` (`id_turma`, `id_aluno`, `sala`) VALUES
+(28, 'enexs de jesus barros', 'Sala 01'),
+(29, 'ana rosa fiquenni de oliveira', 'Sala 01');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `turno`
+--
+
+CREATE TABLE `turno` (
+  `id` int(11) NOT NULL auto_increment,
+  `desc` varchar(255) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Extraindo dados da tabela `turno`
+--
+
+INSERT INTO `turno` (`id`, `desc`) VALUES
+(1, 'Matutino'),
+(2, 'Vespertino'),
+(3, 'Noturno');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `ID` int(10) unsigned zerofill NOT NULL auto_increment,
+  `login` varchar(30) default NULL,
+  `senha` varchar(40) default NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`ID`, `login`, `senha`) VALUES
+(0000000001, 'eneylton@hotmail.com', '81dc9bdb52d04dc20036dbd8313ed055'),
+(0000000002, '123', '202cb962ac59075b964b07152d234b70');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `veiculo`
+--
+
+CREATE TABLE `veiculo` (
+  `id_veiculo` int(11) NOT NULL auto_increment,
+  `ano_fab` varchar(15) default NULL,
+  `marca_modelo` varchar(255) default NULL,
+  `cor` varchar(255) default NULL,
+  `especie` varchar(255) default NULL,
+  `km_inicial` varchar(255) default NULL,
+  `km_final` varchar(255) default NULL,
+  `manutencao` date default NULL,
+  PRIMARY KEY  (`id_veiculo`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Extraindo dados da tabela `veiculo`
+--
+
+INSERT INTO `veiculo` (`id_veiculo`, `ano_fab`, `marca_modelo`, `cor`, `especie`, `km_inicial`, `km_final`, `manutencao`) VALUES
+(1, '2014 / 2014', 'VW / GOL 1.0', 'Vermelho', 'Automovel', '000', '000', '2014-04-08'),
+(2, '2014 / 2014', 'Chevrolette / Celta 4p ', 'branco', 'Automovel', '000', '0000', '2014-03-19');

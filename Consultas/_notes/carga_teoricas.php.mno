@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_soma" value="name:SUM(qtd);datatype:real" />
+	<infoitem key="UD_CARGAS22" value="name:id;datatype:int,name:aluno;datatype:string,name:qtd;datatype:string,name:hora;datatype:string" />
+	<infoitem key="UD_carga_t" value="name:SUM(hora);datatype:real" />
+</info>

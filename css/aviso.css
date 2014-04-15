@@ -1,0 +1,53 @@
+.caixa{
+
+width:500px;
+padding:10px;
+margin:auto;
+border-radius:4px;
+-webkit-border-radius:4px;
+-moz-border-radius:4px;
+}
+
+.content{
+height:150px;
+padding:20px;
+margin:0px 20px 280px 0px;
+border-radius:4px;
+-webkit-border-radius:4px;
+-moz-border-radius:4px;
+}
+
+.td{
+width:800px;
+background:#990033;
+border:1px solid #FEC5D9;
+color:#FFCCCC;
+margin:0px 0px 0px 0px;
+padding:10px;
+}
+
+
+.td2{
+float:left;
+color:#FFFFFF;
+margin:0px 0px 0px 0px;
+padding:50px;
+border:1px solid #CCCCCC;
+}
+
+.click{
+
+color:#FF3333;
+padding:10px;
+text-decoration:none;
+
+}
+
+
+.click:hover{
+
+color:#0066FF;
+padding:10px;
+text-decoration:none;
+
+}

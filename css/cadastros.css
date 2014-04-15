@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+.td{
+padding:8px;
+color:#FFFFFF;
+font-family: verdana;
+font-size: 15px;
+text-transform: uppercase;
+}
+
+.td2{
+padding:8px;
+color:#666666;
+font-family: verdana;
+font-size: 12px;
+text-transform: uppercase;
+}
+
+.input{
+width:290px;
+padding:5px;
+outline:none;
+text-transform:uppercase;
+color:#666666;
+}
+
+.bt{
+border:none;
+padding:7px;
+background:#333;
+color:#FFFFFF;
+width:100px;
+cursor:pointer;
+}
+
+.bt:hover{
+border:none;
+padding:7px;
+background:#666;
+color:#FFFFFF;
+width:100px;
+cursor:pointer;
+}
+
+
