@@ -94,13 +94,13 @@
 	<td><input type="text" name="descricao" value="" size="32"></td>
 	</tr>
 	<tr valign="baseline">
-	<td nowrap align="left">&nbsp;</td>
+	<td nowrap align="left"></td>
 	<td><input type="submit" class="bt4" value="Salvar"></td>
 	</tr>
 	</table>
 	<input type="hidden" name="MM_insert" value="form1">
 	</form>
-	<p>&nbsp;</p>
+	<p></p>
 	</body>
 	</html>
 	<?php

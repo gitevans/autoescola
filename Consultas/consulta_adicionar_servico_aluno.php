@@ -78,7 +78,7 @@
 			<label>
 			<input class="bt2" type="submit" name="button" id="button" value="Pesquisar">
 			</label>
-			&nbsp; &nbsp; &nbsp;Registrar servi&ccedil;o
+			  Registrar servi&ccedil;o
 			</form>
 			</td>
 			</tr>

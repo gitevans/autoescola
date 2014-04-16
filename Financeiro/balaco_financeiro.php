@@ -375,15 +375,15 @@ if (isset($_POST['mes'])) {
         
         <tr>
         <td width="164" bgcolor="#d9d9d9"><span class="td4">ENTRADA:</span></td>
-        <td width="190" bgcolor="#000000"><span class="td6">R$&nbsp;<?php $total = $row_soma1['total']; echo number_format( $total  , 2 , ',' , '.' ); ?></span></td>
+        <td width="190" bgcolor="#000000"><span class="td6">R$<?php $total = $row_soma1['total']; echo number_format( $total  , 2 , ',' , '.' ); ?></span></td>
         </tr>
         <tr>
         <td bgcolor="#F7F7F7"><span class="td4">SAIDA:</span></td>
-        <td bgcolor="#000000"><span class="td5">R$&nbsp;-<?php $total2 = $row_soma2['total'];  echo number_format( $total2  , 2 , ',' , '.' ); ?> </span></td>
+        <td bgcolor="#000000"><span class="td5">R$-<?php $total2 = $row_soma2['total'];  echo number_format( $total2  , 2 , ',' , '.' ); ?> </span></td>
         </tr>
         <tr>
         <td bgcolor="#d9d9d9"><span class="td4">TOTAL:</span></td>
-        <td bgcolor="#000000"><span class="td" style="font-size:26px; color:<?php if ($s_total2<0) echo "#fd0000"; else echo "#00FF00"?>">R$&nbsp;<?php echo number_format( $s_total2  , 2 , ',' , '.' ); ?></span></td>
+        <td bgcolor="#000000"><span class="td" style="font-size:26px; color:<?php if ($s_total2<0) echo "#fd0000"; else echo "#00FF00"?>">R$<?php echo number_format( $s_total2  , 2 , ',' , '.' ); ?></span></td>
         </tr>
   </table>
 

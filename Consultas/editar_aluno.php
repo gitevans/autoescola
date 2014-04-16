@@ -83,7 +83,7 @@ $totalRows_edit = mysql_num_rows($edit);
       <td colspan="2" align="right" nowrap="nowrap"><div align="left">Atualizar</div></td>
     </tr>
     <tr valign="baseline">
-      <td colspan="2" align="right" nowrap="nowrap">&nbsp;</td>
+      <td colspan="2" align="right" nowrap="nowrap"></td>
     </tr>
     <tr valign="baseline">
       <td nowrap="nowrap" align="right"><div align="left">Nome:</div></td>
@@ -135,14 +135,14 @@ $totalRows_edit = mysql_num_rows($edit);
       <td><input type="text" name="observacao" value="<?php echo htmlentities($row_edit['observacao'], ENT_COMPAT, 'utf-8'); ?>" size="32" /></td>
     </tr>
     <tr valign="baseline">
-      <td nowrap="nowrap" align="right">&nbsp;</td>
+      <td nowrap="nowrap" align="right"></td>
       <td><input type="submit" value="Atualizar" /></td>
     </tr>
   </table>
   <input type="hidden" name="MM_update" value="form1" />
   <input type="hidden" name="id_aluno" value="<?php echo $row_edit['id_aluno']; ?>" />
 </form>
-<p>&nbsp;</p>
+<p></p>
 </body>
 </html>
 <?php

@@ -109,8 +109,8 @@
         ?>      </td>
         </tr>
         <tr valign="baseline">
-        <td nowrap align="right">&nbsp;</td>
-        <td>&nbsp;</td>
+        <td nowrap align="right"></td>
+        <td></td>
         </tr>
         <tr valign="baseline">
         <td colspan="2" align="right" nowrap><div align="left">
@@ -140,17 +140,17 @@
         </label></td>
         </tr>
         <tr valign="baseline">
-          <td nowrap align="right">&nbsp;</td>
-          <td>&nbsp;</td>
+          <td nowrap align="right"></td>
+          <td></td>
         </tr>
         <tr valign="baseline">
-        <td nowrap align="right">&nbsp;</td>
+        <td nowrap align="right"></td>
         <td><input type="submit" class="bt4" value="Salvar"></td>
         </tr>
         </table>
         <input type="hidden" name="MM_insert" value="form1">
         </form>
-        <p>&nbsp;</p>
+        <p></p>
         </body>
         </html>
         <?php

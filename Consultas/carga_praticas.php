@@ -131,7 +131,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 			<label>
 			<input class="bt2" type="submit" name="button" id="button" value="Pesquisar">
 			</label>
-			&nbsp; &nbsp; &nbsp;Cargar hor&aacute;ria do aluno em rela&ccedil;&atilde;o as aulas pr&aacute;ticas
+			  Cargar hor&aacute;ria do aluno em rela&ccedil;&atilde;o as aulas pr&aacute;ticas
 			</form>
 			</td>
 			</tr>
@@ -155,7 +155,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 			quantidade de aulas<br /></td>
 			<td width="347" valign="top" bgcolor="#333333" class="td"><div align="center"><br />
 			  carga hor&aacute;ria</div></td>
-			<td width="122" valign="top" bgcolor="#333333" class="td">&nbsp;</td>
+			<td width="122" valign="top" bgcolor="#333333" class="td"></td>
 			</tr>
 			<?php
 			
@@ -216,7 +216,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 								}
 								?></td>
         
-        <td valign="top"  class="td" align="left"><span class="style2">Restam</span>&nbsp;<font color="#666666">&nbsp;
+        <td valign="top"  class="td" align="left"><span class="style2">Restam</span><font color="#666666">
 <?php
 		
 	

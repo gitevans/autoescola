@@ -185,7 +185,7 @@ do {
   }
 ?>
     </select></td>
-    <td width="39" valign="top">&nbsp;</td>
+    <td width="39" valign="top"></td>
   </tr>
   <tr>
    <td valign="top"class="td2"><font color="#333">Inicio da Aula</font></td>
@@ -287,11 +287,11 @@ Exame</font>
     <td colspan="4" valign="top"><textarea name="descricao" id="descricao" cols="45" rows="5"></textarea></td>
   </tr>
   <tr>
-    <td valign="top">&nbsp;</td>
-    <td colspan="4" valign="top">&nbsp;</td>
+    <td valign="top"></td>
+    <td colspan="4" valign="top"></td>
   </tr>
   <tr>
-    <td valign="top">&nbsp;</td>
+    <td valign="top"></td>
     <td colspan="4" valign="top"><input name="submit" type="submit" class="bt" value="Reservar"></td>
   </tr>
 </table>

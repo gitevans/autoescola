@@ -81,7 +81,7 @@
 			<label>
 			<input class="bt2" type="submit" name="button" id="button" value="Pesquisar">
 			</label>
-			&nbsp; &nbsp; &nbsp;Marca Exame JUNTO AO detran- MA
+			  Marca Exame JUNTO AO detran- MA
 			</form>
 			</td>
 			</tr>

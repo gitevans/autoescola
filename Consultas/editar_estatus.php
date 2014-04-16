@@ -88,7 +88,7 @@ $totalRows_aluno = mysql_num_rows($aluno);
         </label></td>
     </tr>
     <tr valign="baseline">
-      <td nowrap align="right">&nbsp;</td>
+      <td nowrap align="right"></td>
       <td><input type="submit" class="bt4" value="Salvar"></td>
     </tr>
   </table>
@@ -96,7 +96,7 @@ $totalRows_aluno = mysql_num_rows($aluno);
   <input type="hidden" name="MM_update" value="form1">
   <input type="hidden" name="id" value="<?php echo $row_aluno['id']; ?>">
 </form>
-<p>&nbsp;</p>
+<p></p>
 </body>
 </html>
 <?php

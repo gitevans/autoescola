@@ -78,7 +78,7 @@
 			<label>
 			<input class="bt2" type="submit" name="button" id="button" value="Pesquisar">
 			</label>
-			&nbsp; &nbsp; &nbsp;SITUA&Ccedil;&Atilde;O DO ALUNO EM RELA&Ccedil;&Atilde;O AO EXAME DE LEGISLA&Ccedil;&Atilde;O
+			  SITUA&Ccedil;&Atilde;O DO ALUNO EM RELA&Ccedil;&Atilde;O AO EXAME DE LEGISLA&Ccedil;&Atilde;O
 			</form>
 			</td>
 			</tr>

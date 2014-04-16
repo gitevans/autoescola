@@ -74,7 +74,7 @@
 			<label>
 			<input class="bt2" type="submit" name="button" id="button" value="Pesquisar">
 			</label>
-			&nbsp; &nbsp; &nbsp;Situa&ccedil;&atilde;o do aluno em rela&ccedil;&atilde;o ao exame de tr&aacute;fego
+			  Situa&ccedil;&atilde;o do aluno em rela&ccedil;&atilde;o ao exame de tr&aacute;fego
 			</form>
 			</td>
 			</tr>

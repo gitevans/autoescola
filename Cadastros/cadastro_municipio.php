@@ -64,20 +64,20 @@ include "../menu.php"
 			<td colspan="2" align="right" nowrap bgcolor="#000000"><div align="left"><span class="td2">Cadastro de Municipio</span></td>
 			</tr>
 			<tr valign="baseline">
-			<td nowrap="nowrap" align="right">&nbsp;</td>
-			<td>&nbsp;</td>
+			<td nowrap="nowrap" align="right"></td>
+			<td></td>
 			</tr>
 			<tr valign="baseline">
 			<td nowrap="nowrap" align="right"><div align="left" class="td4">Municipio:</div></td>
 			<td><input name="municipio" type="text" class="input3" value="" size="32" /></td>
 			</tr>
 			<tr valign="baseline">
-			<td nowrap="nowrap" align="right">&nbsp;</td>
+			<td nowrap="nowrap" align="right"></td>
 			<td><input type="submit" class="bt4" value="Cadastrar" /></td>
 			</tr>
 			</table>
 			<input type="hidden" name="MM_insert" value="form1" />
 			</form>
-			<p>&nbsp;</p>
+			<p></p>
 			</body>
 			</html>

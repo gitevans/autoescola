@@ -57,7 +57,7 @@
         <td colspan="2" bgcolor="#333333"><span class="style2">Rela&ccedil;&atilde;o de Alunos por Instrutor</span></td>
       </tr>
       <tr>
-        <td colspan="2">&nbsp;</td>
+        <td colspan="2"></td>
       </tr>
       <tr>
         <td colspan="2"><select name="instrutor" class="input3" id="instrutor">
@@ -77,12 +77,12 @@ do {
         <input name="button" type="submit" class="bt4" id="button" value="Gerar Rela&ccedil;&atilde;o"></td>
       </tr>
       <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
       </tr>
     </table>
-	<p>&nbsp;</p>
-	<p>&nbsp;</p>
+	<p></p>
+	<p></p>
 	<p>
 	<label></label>
 	<label></label>

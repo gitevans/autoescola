@@ -84,14 +84,14 @@ $totalRows_stat2 = mysql_num_rows($stat2);
           <input name="status" type="radio" value="2"> Reprovado      </td>
     </tr>
     <tr valign="baseline">
-      <td nowrap align="right">&nbsp;</td>
+      <td nowrap align="right"></td>
       <td><input type="submit" class="bt4" value="Salvar"></td>
     </tr>
   </table>
   <input type="hidden" name="MM_update" value="form1">
   <input type="hidden" name="id" value="<?php echo $row_stat2['id']; ?>">
 </form>
-<p>&nbsp;</p>
+<p></p>
 </body>
 </html>
 <?php

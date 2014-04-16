@@ -64,7 +64,7 @@ $totalRows_professor = mysql_num_rows($professor);
   <tr>
     <td>PROFESSOR</td>
     <td width="396"><?php echo $row_professor['prof']; ?></td>
-    <td width="318"><div align="left">&nbsp;Inicio do curso:&nbsp; <?php echo $row_professor['periodo1']; ?> Final: &nbsp;<?php echo $row_professor['periodo2']; ?></div></td>
+    <td width="318"><div align="left">Inicio do curso: <?php echo $row_professor['periodo1']; ?> Final: <?php echo $row_professor['periodo2']; ?></div></td>
   </tr>
   <tr>
     <td width="89" bgcolor="#d9d9d9"></td>

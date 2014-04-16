@@ -391,12 +391,12 @@ $totalRows_total_geral = mysql_num_rows($total_geral);
         <tr>
         <td width="182" bgcolor="#D3D3D3"><span class="font">ENTRADA:</span></td>
         <td width="288"><div align="right" class="font">
-        <div align="left">R$&nbsp;<?php $total = $row_soma3['total']; echo number_format( $total  , 2 , ',' , '.' ); ?></div>
+        <div align="left">R$<?php $total = $row_soma3['total']; echo number_format( $total  , 2 , ',' , '.' ); ?></div>
         </div></td>
         </tr>
         <tr>
         <td bgcolor="#F7F7F7" ><span class="style4">SAIDA</span></td>
-        <td><span class="style4">R$&nbsp;<?php $total2 = $row_soma4['total']; echo number_format( $total2  , 2 , ',' , '.' ); ?></span></td>
+        <td><span class="style4">R$<?php $total2 = $row_soma4['total']; echo number_format( $total2  , 2 , ',' , '.' ); ?></span></td>
         </tr>
         <tr>
         <td bgcolor="#D3D3D3">TOTAL</td>
@@ -432,7 +432,7 @@ $totalRows_total_geral = mysql_num_rows($total_geral);
         
         <tr>
         <td colspan="7" bgcolor="#666"><input  name="selall" id="check" type="checkbox" value="" onclick="CheckAll()">
-        <input class="bt" type="submit" name="button2" id="button2" value="Deletar" />&nbsp;  &nbsp; <label class="td2">
+        <input class="bt" type="submit" name="button2" id="button2" value="Deletar" />   <label class="td2">
         Clientes em Débito</td>
         </tr>
         <tr>
@@ -508,44 +508,44 @@ $totalRows_total_geral = mysql_num_rows($total_geral);
         <td valign="top"  class="td"><font color="#666666"><?php if ($resultado['status'] == 2){
                echo "<font color=\"Red\">Em aberto</font>"; 
                }    ?>            </td>
-        <td valign="top" class="td"><font color="#FF0000">R$&nbsp;<?php $total6 = $resultado['valor2']; echo number_format( $total6  , 2 , ',' , '.' ); ?></font></td>
+        <td valign="top" class="td"><font color="#FF0000">R$<?php $total6 = $resultado['valor2']; echo number_format( $total6  , 2 , ',' , '.' ); ?></font></td>
         <td valign="top"  class="td" align="left"><font color="#666666"><?php
 		    if ($dias >= 10){
-            echo "<img src=\"../Img/01.png\" />&nbsp; Faltam ".$dias." Dias para o Vencimento!</span>"."</br>";
+            echo "<img src=\"../Img/01.png\" /> Faltam ".$dias." Dias para o Vencimento!</span>"."</br>";
 		    }
 		    else if ($dias == 10){
-            echo "<img src=\"../Img/01.png\" />&nbsp; Faltam ".$dias." Dias para o Vencimento!</span>"."</br>";
+            echo "<img src=\"../Img/01.png\" /> Faltam ".$dias." Dias para o Vencimento!</span>"."</br>";
 		    }
 		    else if ($dias == 9){
-            echo "<img src=\"../Img/05.png\" />&nbsp; Faltam ".$dias." Dias para o Vencimento!</span>"."</br>";
+            echo "<img src=\"../Img/05.png\" /> Faltam ".$dias." Dias para o Vencimento!</span>"."</br>";
 		    }
 		    else if ($dias == 8){
-            echo "<img src=\"../Img/05.png\" />&nbsp; Faltam ".$dias." Dias para o Vencimento!</span>"."</br>";
+            echo "<img src=\"../Img/05.png\" /> Faltam ".$dias." Dias para o Vencimento!</span>"."</br>";
 		    }
 		     else if ($dias == 7){
-            echo "<img src=\"../Img/05.png\" />&nbsp; Faltam ".$dias." Dias para o Vencimento!</span>"."</br>";
+            echo "<img src=\"../Img/05.png\" /> Faltam ".$dias." Dias para o Vencimento!</span>"."</br>";
 		    }
 		    else if ($dias == 6){
-            echo "<img src=\"../Img/05.png\" />&nbsp; Faltam ".$dias." Dias para o vencimento!</span>"."</br>";
+            echo "<img src=\"../Img/05.png\" /> Faltam ".$dias." Dias para o vencimento!</span>"."</br>";
 		    } else if ($dias == 5){
-            echo "<img src=\"img/04.png\" />&nbsp; Faltam ".$dias." Dias para o vencimento!</span>"."</br>";
+            echo "<img src=\"img/04.png\" /> Faltam ".$dias." Dias para o vencimento!</span>"."</br>";
 			 } else if ($dias == 4){
-            echo "<img src=\"../Img/04.png\" />&nbsp; Faltam ".$dias." Dias para o vencimento!</span>"."</br>";
+            echo "<img src=\"../Img/04.png\" /> Faltam ".$dias." Dias para o vencimento!</span>"."</br>";
             }
 			else if ($dias == 3){
-             echo "<img src=\"../Img/04.png\" />&nbsp; Faltam ".$dias." Dias para o Vencimento!</span>"."</br>";
+             echo "<img src=\"../Img/04.png\" /> Faltam ".$dias." Dias para o Vencimento!</span>"."</br>";
              }
 			else if ($dias == 2){
-             echo "<img src=\"../Img/04.png\" />&nbsp; Faltam ".$dias." Dias para o vencimento!</span>"."</br>";
+             echo "<img src=\"../Img/04.png\" /> Faltam ".$dias." Dias para o vencimento!</span>"."</br>";
 			 }
 			else if ($dias == 1){
-             echo "<img src=\"../Img/04.png\" />&nbsp; Falta ".$dias." Dia para o vencimento!</span>"."</br>";
+             echo "<img src=\"../Img/04.png\" /> Falta ".$dias." Dia para o vencimento!</span>"."</br>";
 			
             } else if ($dias == 0){
-            echo "<img src=\"../Img/03.png\" />&nbsp; Vencimento Hoje!"."</br>";
+            echo "<img src=\"../Img/03.png\" /> Vencimento Hoje!"."</br>";
             }
 			else if ($dias <= 0){
-            echo "<img src=\"../Img/06.gif\" />&nbsp;&nbsp;Em Atrazo !"."</br>";
+            echo "<img src=\"../Img/06.gif\" />Em Atrazo !"."</br>";
 			}
 			
             ?></td>
@@ -603,7 +603,7 @@ $totalRows_total_geral = mysql_num_rows($total_geral);
         </table>
         <table width="900" border="0" align="center" style="border-collapse:collapse;">
         <tr>
-        <td bgcolor="#333"><div align="right" class="style5">R$&nbsp;<?php $total3 = $row_total_geral['total']; echo number_format( $total3  , 2 , ',' , '.' ); ?></div></td>
+        <td bgcolor="#333"><div align="right" class="style5">R$<?php $total3 = $row_total_geral['total']; echo number_format( $total3  , 2 , ',' , '.' ); ?></div></td>
         </tr>
         </table>
         
