@@ -44,7 +44,7 @@ if (isset($_POST['usuario'])) {
   $loginUsername=$_POST['usuario'];
   $password=$_POST['senha'];
   $MM_fldUserAuthorization = "";
-  $MM_redirectLoginSuccess = "../Home/painel.php";
+  $MM_redirectLoginSuccess = "../Home/index.php";
   $MM_redirectLoginFailed = "login.php";
   $MM_redirecttoReferrer = false;
   mysql_select_db($database_conexao, $conexao);
