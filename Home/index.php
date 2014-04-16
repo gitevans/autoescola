@@ -1,19 +1,16 @@
-            
-            <?php require_once('../Connections/conexao.php'); ?>
-            <?php
-//initialize the session
+<?php require_once('../Connections/conexao.php'); ?>
+<?php //iniciar uma sessão
 if (!isset($_SESSION)) {
   @session_start();
 }
 
-// ** Logout the current user. **
 $logoutAction = $_SERVER['PHP_SELF']."?doLogout=true";
 if ((isset($_SERVER['QUERY_STRING'])) && ($_SERVER['QUERY_STRING'] != "")){
   $logoutAction .="&". htmlentities($_SERVER['QUERY_STRING']);
 }
 
 if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
-  //to fully log out a visitor we need to clear the session varialbles
+
   $_SESSION['MM_Username'] = NULL;
   $_SESSION['MM_UserGroup'] = NULL;
   $_SESSION['PrevUrl'] = NULL;
@@ -28,27 +25,25 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
   }
 }
 ?>
-          
-            <html>
-            
-            <head>
-            <link rel="stylesheet" href="../css/estilo_principal.css" type="text/css">
-            <link rel="stylesheet" href="../css/menu_horizontal.css" type="text/css">
-            
-            <title>Gerenciador Auto Escola</title>
-            <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-            <style type="text/css">
+      
+<html> 
+  <head>
+  <link rel="stylesheet" href="../css/estilo_principal.css" type="text/css">
+  <link rel="stylesheet" href="../css/menu_horizontal.css" type="text/css">
+  <title>Gerenciador Auto Escola</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+  <style type="text/css">
             <!--
             .style1 {
             font-size: 24px;
             color: #FFFFFF;
             }
             -->
-            </style>
+  </style>
+  </head>
             
-            </head>
-            
-            <body>
+<body>
             <table width="90%" border="0" style="border-collapse:collapse;" align="center">
             <tr>
             <td bgcolor="#333333"><div class="title">Gerenciador Auto Escola</div>
@@ -172,11 +167,7 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
 			{ echo "<a href='../Consultas/consulta_aprovados_trafego.php'>Alunos Aprovados </a>"; } ?></li>
              <li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
 			{ echo "<a href='../Consultas/consulta_reprovados_trafego.php'>Alunos Reprovados</a>"; } ?></li>
-            
-          
             </ul>
-			
-			
 			</li>
             
 			<li><a href="#">Financeiro</a>
@@ -251,18 +242,14 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
 			</ul>
 			</li>
             <li><a href="../aviso.php?id=2">Sair</a></li>
-            
-			
 			</ul>
-			</div>
-			</div>
-            
-            
-            </td>
-            </tr>
-            <tr>
-            <td bgcolor="#FFFFFF">
-            <div class="grid">
+	</div>
+</div>
+    </td>
+  </tr>
+<tr>
+<td bgcolor="#FFFFFF">
+<div class="grid">
                           <?php require('../consultas/consulta_alunos.php'); 
             @mysql_free_result($Recordset1);
             ?>
@@ -300,6 +287,6 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
             <td bgcolor="#333" align="center"><font color="#FFFFFF">Mhs Soluc�es Web Contato: (98) 8800-3198 | 3288046 <br>
             email:mhssloucoesweb@hotmail.com &copy; 2014 copyright</font></td>
             </tr>
-            </table>
-            </body>
-            </html>
+    </table>
+  </body>
+</html>

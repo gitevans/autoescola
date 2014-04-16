@@ -1,10 +1,9 @@
-		<?php
-        @session_start();
-
-        ?>
+<?php
+    @session_start();
+?>
         <?php
         // At line 2 of our calendar.php script, add the MySQL connection information:
-        $mysql = mysql_connect("localhost", "root", "");
+        $mysql = mysql_connect("localhost", "root", "jedai2003");
         mysql_select_db("auto_escola_2014", $mysql) or die(mysql_error());
         
         // Now we need to define "A DAY", which will be used later in the script:
@@ -23,7 +22,7 @@
         $start = mktime(12,0,0,$month,1,$year);
         $firstDayArray = getdate($start);
         ?>
-        <html>
+<html>
         <head>
         <title><?php echo "Calendar: ".$firstDayArray['month']."" . $firstDayArray['year']; ?></title>
         <script language="JavaScript">
