@@ -52,10 +52,10 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
             <table width="90%" border="0" style="border-collapse:collapse;" align="center">
             <tr>
             <td bgcolor="#333333"><div class="title">Gerenciador Auto Escola</div>
-            <div class="logo"><img width="230" height="80" src="../img/logo.png"></div>
+            <div class="logo"><img width="230" height="80" src="../Img/logo.png"></div>
             <div class="logado"><?php echo $_SESSION['data']; ?><br>
             
-            Usuário logado: <font color="#FF9933"><?php echo $_SESSION['usuario']; ?></font></div></td>
+            Usuï¿½rio logado: <font color="#FF9933"><?php echo $_SESSION['usuario']; ?></font></div></td>
             </tr>
             <tr>
             <td bgcolor="#666666">
@@ -66,24 +66,23 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
 			<li><a href='#'>Cadastro</a>
 			<ul>
 			<li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3 )
-			{ echo "<a href='../cadastros/cadastro_alunos2.php'>Alunos </a>"; } ?></li>
+			{ echo "<a href='../Cadastros/cadastro_alunos2.php'>Alunos </a>"; } ?></li>
 			
 			
 			<li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
-			{ echo "<a href='../cadastros/cadastro_instrutor2.php'>Instrutor </a>"; } ?></li>
+			{ echo "<a href='../Cadastros/cadastro_instrutor2.php'>Instrutor </a>"; } ?></li>
 			
 			
 			<li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
-			{ echo "<a href='../cadastros/cadastro_fornecedor2.php'>Fornecedor </a>"; } ?></li>
+			{ echo "<a href='../Cadastros/cadastro_fornecedor2.php'>Fornecedor </a>"; } ?></li>
 			
 			
 			<li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
-			{ echo "<a href='../cadastros/cadastro_pagamento2.php'>Forma de Pagamento </a>"; } ?></li>
+			{ echo "<a href='../Cadastros/cadastro_pagamento2.php'>Forma de Pagamento </a>"; } ?></li>
 			
 			
 			<li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
-			{ echo "<a href='../cadastros/cadastro_veiculo2.php'>Ve&iacute;culos	</a>"; } ?></li>
-			
+			{ echo "<a href='../Cadastros/cadastro_veiculo2.php'>Ve&iacute;culos	</a>"; } ?></li>
 			
 			</ul>
 			</li>
@@ -96,7 +95,7 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
 			{ echo "<a href='../Consultas/aula_teorica2.php'>Aulas te&oacute;ricas</a>"; } ?></li>
             
              <li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
-			{ echo "<a href='../Consultas/adicionar_carga_teorica.php'>Carga hor&aacute;ria</a>"; } ?></li>
+			{ echo "<a href='../Consultas/adicionar_carga_teorica.php'>Carga horÃ¡ria</a>"; } ?></li>
             
             <li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
 			{ echo "<a href='../Consultas/adicionar_legislacao.php'>Marca exame (DETRAN)</a>"; } ?></li>
@@ -141,7 +140,7 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
 			</ul>
 			</li>
             
-           	<li><a href="#">Aulas pr&aacute;ticas</a>
+           	<li><a href="#">Aulas prÃ¡ticas</a>
 			<ul>
 		
             
@@ -199,7 +198,7 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
             <li><?php if ($_SESSION['chave']==1){ echo "<a href='../Consultas/consulta_fluxo_caixa.php'>Fluxo de Caixa
 			</a>"; } ?></li>
             
-			<li><?php if ($_SESSION['chave']==1){ echo "<a href='../cadastros/cadastro_registro_despesas.php'>Registrar Despesas
+			<li><?php if ($_SESSION['chave']==1){ echo "<a href='../Cadastros/cadastro_registro_despesas.php'>Registrar Despesas
 			</a>"; } ?></li>
 			</ul>
 			</li>
@@ -279,12 +278,12 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
               </fieldset><br />
 <br />
 
-              Usuário Logado no Momento &raquo;
+              Usuï¿½rio Logado no Momento &raquo;
             <?php include ("online.php"); ?>
               <br>
               <hr />
             <br>
-              Você faz parte do Grupo: <font color="#CC3333"><strong><br>
+              Vocï¿½ faz parte do Grupo: <font color="#CC3333"><strong><br>
                 <br>
                 <?php echo $grupo; ?></strong></font>
               <hr />
@@ -298,7 +297,7 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
             </div></td>
             </tr>
             <tr>
-            <td bgcolor="#333" align="center"><font color="#FFFFFF">Mhs Solucões Web Contato: (98) 8800-3198 | 3288046 <br>
+            <td bgcolor="#333" align="center"><font color="#FFFFFF">Mhs Solucï¿½es Web Contato: (98) 8800-3198 | 3288046 <br>
             email:mhssloucoesweb@hotmail.com &copy; 2014 copyright</font></td>
             </tr>
             </table>
