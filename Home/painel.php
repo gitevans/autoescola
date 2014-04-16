@@ -1,3 +1,4 @@
+<?php require_once('../Connections/conexao.php'); ?>
 <?php
 //initialize the session
 if (!isset($_SESSION)) {
