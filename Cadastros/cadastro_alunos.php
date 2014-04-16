@@ -39,7 +39,8 @@
 		$row_municipio = mysql_fetch_assoc($municipio);
 		$totalRows_municipio = mysql_num_rows($municipio);
 		?>
-		<!DOCTYPE html>
+
+<!DOCTYPE html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -95,8 +96,8 @@ include "../menu.php"
 		
 		
 		<tr valign="baseline">
-		<td nowrap align="right">&nbsp;</td>
-		<td>&nbsp;</td>
+		<td nowrap align="right"></td>
+		<td></td>
 		</tr>
 		<tr valign="baseline">
 		<td nowrap align="left"><div align="left"><span class="td7"><font color="#666666">Nome:</font></div></td>
@@ -169,8 +170,8 @@ include "../menu.php"
 		</label></td>
 		</tr>
 		<tr valign="baseline">
-		  <td nowrap align="right">&nbsp;</td>
-		  <td>&nbsp;</td>
+		  <td nowrap align="right"></td>
+		  <td></td>
 		  </tr>
 		<tr valign="baseline">
 		<td nowrap align="right"><div align="left"></div></td>

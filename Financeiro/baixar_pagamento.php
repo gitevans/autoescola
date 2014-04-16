@@ -85,8 +85,8 @@
       </div></td>
     </tr>
     <tr valign="baseline">
-      <td nowrap align="right">&nbsp;</td>
-      <td>&nbsp;</td>
+      <td nowrap align="right"></td>
+      <td></td>
     </tr>
     <tr valign="baseline">
       <td nowrap align="right">Valor PAGO:</td>
@@ -98,14 +98,14 @@
       <td><input name="status" type="hidden" value="1"></td>
     </tr>
     <tr valign="baseline">
-      <td nowrap align="right">&nbsp;</td>
+      <td nowrap align="right"></td>
       <td><input type="submit" class="bt4" value="Baixar"></td>
     </tr>
   </table>
   <input type="hidden" name="MM_update" value="form1">
   <input type="hidden" name="id_mov" value="<?php echo $row_mov['id_mov']; ?>">
 </form>
-<p>&nbsp;</p>
+<p></p>
 </body>
 </html>
 <?php

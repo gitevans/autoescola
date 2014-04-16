@@ -85,19 +85,19 @@
             </div></td>
             </tr>
             <tr valign="baseline">
-            <td colspan="2" align="right" nowrap="nowrap">&nbsp;</td>
+            <td colspan="2" align="right" nowrap="nowrap"></td>
             <?php echo htmlentities($row_carg['aluno'], ENT_COMPAT, 'utf-8'); ?>                </tr>
             
             
             <tr valign="baseline">
-            <td nowrap="nowrap" align="right">&nbsp;</td>
+            <td nowrap="nowrap" align="right"></td>
             <td><input type="submit" class="bt4" value="Registrar" /></td>
             </tr>
             </table>
             <input type="hidden" name="MM_update" value="form1" />
             <input type="hidden" name="id" value="<?php echo $row_carg['id']; ?>" />
             </form>
-            <p>&nbsp;</p>
+            <p></p>
             </body>
             </html>
             <?php

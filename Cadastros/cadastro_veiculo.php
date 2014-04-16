@@ -140,13 +140,13 @@ include "../menu.php"
 		<td><input name="manutencao" type="date" class="input3" value="" size="32"></td>
 		</tr>
 		<tr valign="baseline">
-		<td >&nbsp;</td>
+		<td ></td>
 		<td><input type="submit" class="bt4" value="Cadastrar"></td>
 		</tr>
 		</table>
 		<input type="hidden" name="MM_insert" value="form1">
 		</form>
-		<p>&nbsp;</p>
+		<p></p>
 		</body>
 		</html>
 		<?php

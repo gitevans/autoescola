@@ -180,11 +180,11 @@ $s_total = $s1 - $s2 ;
     <td width="209" valign="top" bgcolor="#FFFFFF"><div align="right"><span class="style3">N&ordm; <?php echo date("md"); ?><?php echo $row_con2['id_mov']; ?></span></div></td>
   </tr>
 </table>
-<p>&nbsp;</p>
+<p></p>
 <hr>
 <table width="1027" border="0" align="center">
   <tr>
-    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td bgcolor="#FFFFFF"></td>
   </tr>
   <tr>
     <td bgcolor="#FFFFFF"><div align="center"><strong>::: RELAT&Oacute;RIO MENSAL ::::</strong></div></td>

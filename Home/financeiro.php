@@ -199,7 +199,7 @@ MM_reloadPage(true);
     <td bgcolor="#0b8efe" align="center"><font color="#FFFFFF">MHSSOLUÇÕESWEB (98) 88003198 &copy; copyright</font></td>
   </tr>
 </table>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+<p></p>
+<p></p>
 </body>
 </html>

@@ -59,8 +59,8 @@
 			<td colspan="2" bgcolor="#000000"><span class="style1 td4"><font color="#fff">Lista de Presen&ccedil;a</span></td>
 			</tr>
 			<tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
+			<td></td>
+			<td></td>
 			</tr>
 			<tr>
 			<td width="209" class="td4">Sala de aula</td>
@@ -81,20 +81,20 @@
 			</select></td>
 			</tr>
 			<tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
+			<td></td>
+			<td></td>
 			</tr>
 			<tr>
-			<td>&nbsp;</td>
+			<td></td>
 			<td><input name="button" type="submit" class="bt4" id="button" value="Pesquisar" /></td>
 			</tr>
 			<tr>
-			  <td>&nbsp;</td>
-			  <td>&nbsp;</td>
+			  <td></td>
+			  <td></td>
 			  </tr>
 			</table>
-			<p>&nbsp;</p>
-			<p>&nbsp;</p>
+			<p></p>
+			<p></p>
 			<label></label>
 			<label></label>
 			</form>

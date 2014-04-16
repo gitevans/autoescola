@@ -116,7 +116,7 @@ $totalRows_contar = mysql_num_rows($contar);
 			<label>
 			<input class="bt2" type="submit" name="button" id="button" value="Pesquisar">
 			</label>
-			&nbsp; &nbsp; &nbsp;Rela&ccedil;&atilde;o de alunos agendados &raquo;
+			  Rela&ccedil;&atilde;o de alunos agendados &raquo;
 			Total:
 			<?php echo $row_contar['count( *)']; ?>
 			</form>
@@ -201,7 +201,7 @@ Alunos</td>
 			
 			<td valign="top" class="td7"><?php echo $resultado['aluno']; ?></td>
 			<td class="td7" valign="top"><?php echo $resultado['instrutor']; ?></td>
-			<td class="td7" valign="top">Das&nbsp; <?php echo $resultado['hora']; ?> as &nbsp; <?php echo $resultado['event_shortdesc']; ?></td>
+			<td class="td7" valign="top">Das <?php echo $resultado['hora']; ?> as  <?php echo $resultado['event_shortdesc']; ?></td>
 			<td class="td7" valign="top"><?php echo $resultado['veiculo']; ?></td>
 			</tr>
 			<tr><?php $cont ++; }?>

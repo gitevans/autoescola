@@ -20,27 +20,27 @@
     <h3 class="panel-title">Acesso</h3>
   </div>
   <div class="panel-body">
-    <form class="form-horizontal" name="form1" method="POST" action="./Programacao/log.php">
-  <fieldset>
-    <legend>Acesso</legend>
-   <div class="form-group"><label  class="col-md-2 control-label">Usuário</label>
-      <div class="col-md-8">
-      <input class="form-control" id="focusedInput"type="text" class="form-control"  name="usuario" id="usuario">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inputPassword" class="col-md-2 control-label">Senha</label>
-      <div class="col-md-8">
-		<input class="form-control" id="focusedInput"class="form-control" type="password" name="senha" id="senha">
-     </div>
-    </div>
-    <div class="form-group">
-      <div class="col-md-6 col-md-offset-2">
-        <button type="submit" class="btn btn-primary">Entrar</button>
-      </div>
-    </div>
-  </fieldset>
-</form>
+        <form class="form-horizontal" name="form1" method="POST" action="./Connections/autentica.php">
+          <fieldset>
+            <legend>Acesso</legend>
+           <div class="form-group"><label  class="col-md-2 control-label">Usuário</label>
+              <div class="col-md-8">
+              <input class="form-control" id="focusedInput"type="text" class="form-control"  name="usuario" id="usuario">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword" class="col-md-2 control-label">Senha</label>
+              <div class="col-md-8">
+        		<input class="form-control" id="focusedInput"class="form-control" type="password" name="senha" id="senha">
+             </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-6 col-md-offset-2">
+                <button type="submit" class="btn btn-primary">Entrar</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
       </div>
     </div>
 	 </div>

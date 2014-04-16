@@ -76,31 +76,31 @@ include "../menu.php"
       <td colspan="2" align="right" nowrap="nowrap" bgcolor="#000000"><div align="left" class="style1">Cadastro de Usu&aacute;rio</div></td>
     </tr>
     <tr valign="baseline">
-      <td nowrap="nowrap" align="right">&nbsp;</td>
-      <td>&nbsp;</td>
+      <td nowrap="nowrap" align="right"></td>
+      <td></td>
     </tr>
     <tr valign="baseline">
-      <td nowrap="nowrap" align="right" ><div align="left" >&nbsp;nome do usu&aacute;rio:</div></td>
+      <td nowrap="nowrap" align="right" ><div align="left" >nome do usu&aacute;rio:</div></td>
       <td><input name="nome" type="text" class="input3" value="" size="40" /></td>
     </tr>
     <tr valign="baseline">
-      <td nowrap="nowrap" align="right"><div align="left">&nbsp; Login:</div></td>
+      <td nowrap="nowrap" align="right"><div align="left"> Login:</div></td>
       <td><input name="usuario" type="text" class="input3" value="" size="40" /></td>
     </tr>
     <tr valign="baseline">
-      <td nowrap="nowrap" align="right"><div align="left">&nbsp; Senha:</div></td>
+      <td nowrap="nowrap" align="right"><div align="left"> Senha:</div></td>
       <td><input name="senha" type="password" class="input3" value="" size="40" /></td>
     </tr>
     <tr valign="baseline">
-      <td nowrap="nowrap" align="right"><div align="left">&nbsp; Email:</div></td>
+      <td nowrap="nowrap" align="right"><div align="left"> Email:</div></td>
       <td><input name="email" type="text" class="input3" value="" size="40" /></td>
     </tr>
     <tr valign="baseline">
-      <td nowrap="nowrap" align="right"><div align="left">&nbsp; Telefone:</div></td>
+      <td nowrap="nowrap" align="right"><div align="left"> Telefone:</div></td>
       <td><input name="telefone" type="text" class="input3" value="" size="40" /></td>
     </tr>
     <tr valign="baseline">
-      <td nowrap="nowrap" align="right"><div align="left">&nbsp; Filial:</div></td>
+      <td nowrap="nowrap" align="right"><div align="left"> Filial:</div></td>
       <td><label>
         <select name="filial" class="input3" id="filial">
           <option value="">Selecione</option>
@@ -120,7 +120,7 @@ do {
       </label></td>
     </tr>
     <tr valign="baseline">
-      <td nowrap="nowrap" align="right"><div align="left">&nbsp; N&Iacute;vel de Acesso:</div></td>
+      <td nowrap="nowrap" align="right"><div align="left"> N&Iacute;vel de Acesso:</div></td>
       <td><label>
         <select name="chave" class="input3" id="chave">
           <option>Selecione</option>
@@ -133,13 +133,13 @@ do {
       </label></td>
     </tr>
     <tr valign="baseline">
-      <td nowrap="nowrap" align="right">&nbsp;</td>
+      <td nowrap="nowrap" align="right"></td>
       <td><input type="submit" class="bt4" value="Salvar" /></td>
     </tr>
   </table>
   <input type="hidden" name="MM_insert" value="form1" />
 </form>
-<p>&nbsp;</p>
+<p></p>
 </body>
 </html>
 <?php

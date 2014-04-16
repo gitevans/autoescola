@@ -78,7 +78,7 @@
 			<label>
 			<input class="bt2" type="submit" name="button" id="button" value="Pesquisar">
 			</label>
-			&nbsp; &nbsp; &nbsp;Exame de tr&aacute;fego
+			  Exame de tr&aacute;fego
 			</form>
 			</td>
 			</tr>
@@ -170,41 +170,41 @@
         
         <td valign="top"  class="td" align="left"><font color="#666666"><?php
 		    if ($dias >= 10){
-            echo "<img src=\"../Img/01.png\" />&nbsp; Faltam ".$dias." Dias para o Exame!</span>"."</br>";
+            echo "<img src=\"../Img/01.png\" /> Faltam ".$dias." Dias para o Exame!</span>"."</br>";
 		    }
 		    else if ($dias == 10){
-            echo "<img src=\"../Img/01.png\" />&nbsp; Faltam ".$dias." Dias para o Exame!</span>"."</br>";
+            echo "<img src=\"../Img/01.png\" /> Faltam ".$dias." Dias para o Exame!</span>"."</br>";
 		    }
 		    else if ($dias == 9){
-            echo "<img src=\"../Img/05.png\" />&nbsp; Faltam ".$dias." Dias para o Exame!</span>"."</br>";
+            echo "<img src=\"../Img/05.png\" /> Faltam ".$dias." Dias para o Exame!</span>"."</br>";
 		    }
 		    else if ($dias == 8){
-            echo "<img src=\"../Img/05.png\" />&nbsp; Faltam ".$dias." Dias para o Exame!</span>"."</br>";
+            echo "<img src=\"../Img/05.png\" /> Faltam ".$dias." Dias para o Exame!</span>"."</br>";
 		    }
 		     else if ($dias == 7){
-            echo "<img src=\"../Img/05.png\" />&nbsp; Faltam ".$dias." Dias para o Exame!</span>"."</br>";
+            echo "<img src=\"../Img/05.png\" /> Faltam ".$dias." Dias para o Exame!</span>"."</br>";
 		    }
 		    else if ($dias == 6){
-            echo "<img src=\"../Img/05.png\" />&nbsp; Faltam ".$dias." Dias para o Exame!</span>"."</br>";
+            echo "<img src=\"../Img/05.png\" /> Faltam ".$dias." Dias para o Exame!</span>"."</br>";
 		    } else if ($dias == 5){
-            echo "<img src=\"img/04.png\" />&nbsp; Faltam ".$dias." Dias para o  Exame!</span>"."</br>";
+            echo "<img src=\"img/04.png\" /> Faltam ".$dias." Dias para o  Exame!</span>"."</br>";
 			 } else if ($dias == 4){
-            echo "<img src=\"../Img/04.png\" />&nbsp; Faltam ".$dias." Dias para o Exame!</span>"."</br>";
+            echo "<img src=\"../Img/04.png\" /> Faltam ".$dias." Dias para o Exame!</span>"."</br>";
             }
 			else if ($dias == 3){
-             echo "<img src=\"../Img/04.png\" />&nbsp; Faltam ".$dias." Dias para o Exame!</span>"."</br>";
+             echo "<img src=\"../Img/04.png\" /> Faltam ".$dias." Dias para o Exame!</span>"."</br>";
              }
 			else if ($dias == 2){
-             echo "<img src=\"../Img/04.png\" />&nbsp; Faltam ".$dias." Dias para o Exame!</span>"."</br>";
+             echo "<img src=\"../Img/04.png\" /> Faltam ".$dias." Dias para o Exame!</span>"."</br>";
 			 }
 			else if ($dias == 1){
-             echo "<img src=\"../Img/04.png\" />&nbsp; Falta ".$dias." Dia para o Exame!</span>"."</br>";
+             echo "<img src=\"../Img/04.png\" /> Falta ".$dias." Dia para o Exame!</span>"."</br>";
 			
             } else if ($dias == 0){
-            echo "<img src=\"../Img/03.png\" />&nbsp; Dia do Exame!"."</br>";
+            echo "<img src=\"../Img/03.png\" /> Dia do Exame!"."</br>";
             }
 			else if ($dias <= 0){
-            echo "<img src=\"../Img/06.gif\" />&nbsp;&nbsp;passou o dia do Exame !"."</br>";
+            echo "<img src=\"../Img/06.gif\" />passou o dia do Exame !"."</br>";
 			}
 			
             ?></td>

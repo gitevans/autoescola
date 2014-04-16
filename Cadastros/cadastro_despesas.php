@@ -179,13 +179,13 @@ include "../menu.php"
 	<input type="hidden" name="mes" value="<?php echo $_SESSION['MM_Username']; ?>" size="32">
 	
 	<tr valign="baseline">
-	<td nowrap align="right">&nbsp;</td>
+	<td nowrap align="right"></td>
 	<td><input type="submit" class="bt" value="Registrar"></td>
 	</tr>
 	</table>
 	<input type="hidden" name="MM_insert" value="form1">
 	</form>
-	<p>&nbsp;</p>
+	<p></p>
 	</body>
 	</html>
 	<?php

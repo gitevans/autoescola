@@ -81,13 +81,13 @@ $totalRows_cads = mysql_num_rows($cads);
     </tr>
     
     <tr valign="baseline">
-      <td nowrap="nowrap" align="right">&nbsp;</td>
+      <td nowrap="nowrap" align="right"></td>
       <td><input type="submit" value="Registrar" /></td>
     </tr>
   </table>
   <input type="hidden" name="MM_insert" value="form1" />
 </form>
-<p>&nbsp;</p>
+<p></p>
 </body>
 </html>
 <?php

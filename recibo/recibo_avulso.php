@@ -362,14 +362,14 @@ function MM_callJS(jsStr) { //v2.0
 ?></div>
       <div class="box1">
     
-Recebi do(a) Sr.(a) <?php echo $row_nota['cliente']; ?> </strong>&nbsp;a quantia supra <strong>R$</strong>&nbsp;<strong><?php
+Recebi do(a) Sr.(a) <?php echo $row_nota['cliente']; ?> </strong>a quantia supra <strong>R$</strong><strong><?php
 //Agora um exemplo prático
      $valor = number_format($val,2,",",".");
     
     echo $valor.' ('.escreverValorMoeda($valor); echo ')'; 
 	
 ?>
-          </strong> referente a: &nbsp;<?php echo $row_nota['descricao']; ?> qual(is) lhe dou plena e geral quita&ccedil;&atilde;o.</p>
+          </strong> referente a: <?php echo $row_nota['descricao']; ?> qual(is) lhe dou plena e geral quita&ccedil;&atilde;o.</p>
       <p>
     
     </div>
@@ -379,7 +379,7 @@ Recebi do(a) Sr.(a) <?php echo $row_nota['cliente']; ?> </strong>&nbsp;a quantia
     <td colspan="2"><hr /></td>
   </tr>
   <tr>
-    <td colspan="2">&nbsp;</td>
+    <td colspan="2"></td>
   </tr>
   <tr>
     <td width="414"><p align="center">_____________________________________________<br />

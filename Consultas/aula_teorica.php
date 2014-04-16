@@ -82,7 +82,7 @@
 			<label>
 			<input class="bt2" type="submit" name="button" id="button" value="Pesquisar">
 			</label>
-			&nbsp; &nbsp; &nbsp;Registrar aluno em sala de aula
+			  Registrar aluno em sala de aula
 			</form>
 			</td>
 			</tr>

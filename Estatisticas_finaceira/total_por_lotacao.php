@@ -80,7 +80,7 @@ $totalRows_total2 = mysql_num_rows($total2);
 <table width="1000" border="0" align="center" style="border-collapse:collapse;">
   <tr>
     <td width="835" bgcolor="#666"><span class="td3">
-      &nbsp;Total<br />
+      Total<br />
     </span></td>
     <td width="155" bgcolor="#666"><div align="center"><span class="td3">R$
     

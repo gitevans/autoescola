@@ -61,7 +61,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 	<div class="row-fluid"> 
 <p align="center"><strong>:: DETALHES ::</strong><br />
 <hr /></p>
-<p><?php echo $row_cliente['event_title']; ?> para o aluno(a) &nbsp;<?php echo $row_cliente['aluno']; ?><br />
+<p><?php echo $row_cliente['event_title']; ?> para o aluno(a) <?php echo $row_cliente['aluno']; ?><br />
 no dia: <?php 
 	   $date = $row_cliente['event_start']; 
 	  

@@ -76,7 +76,7 @@
 			<label>
 			<input class="bt2" type="submit" name="button" id="button" value="Pesquisar">
 			</label>
-			&nbsp; &nbsp; &nbsp;Opera&ccedil;&otilde;es realizada pelo usu&aacute;rio
+			  Opera&ccedil;&otilde;es realizada pelo usu&aacute;rio
 			</form>
 			</td>
 			</tr>

@@ -159,10 +159,10 @@
             <td colspan="2" align="right" nowrap bgcolor="#000000"><div align="left" class="td4"><font color="#fff">Registrar Servi&ccedil;os</div></td>
             </tr>
             <tr valign="baseline">
-            <td colspan="2" align="right" nowrap>&nbsp;</td>
+            <td colspan="2" align="right" nowrap></td>
             </tr>
             <tr valign="baseline">
-            <td width="225" align="right" nowrap><div align="left"><font color="#666">&nbsp;Servi&ccedil;os:</div></td>
+            <td width="225" align="right" nowrap><div align="left"><font color="#666">Servi&ccedil;os:</div></td>
             <td width="363"><label>
             <select name="id_servico" class="input" id="id_servico">
             <option value="value">Selecione</option>
@@ -182,7 +182,7 @@
             </label></td>
             </tr>
             <tr valign="baseline">
-            <td nowrap align="right"><div align="left"><font color="#666">&nbsp;Tipo:</div></td>
+            <td nowrap align="right"><div align="left"><font color="#666">Tipo:</div></td>
             <td><div align="left"><font color="#666">
             <input type="radio" name="tipo" id="radio" value="0">
             Receita 
@@ -193,7 +193,7 @@
             <br></td>
             </tr>
             <tr valign="baseline">
-            <td nowrap align="right"><div align="left"><font color="#666">&nbsp;Forma de Pagamento:</div></td>
+            <td nowrap align="right"><div align="left"><font color="#666">Forma de Pagamento:</div></td>
             <td><label>
             <select name="categoria" class="input" id="categoria">
             <option value="">Selecione</option>
@@ -213,26 +213,26 @@
             </label></td>
             </tr>
             <tr valign="baseline">
-            <td nowrap align="right">&nbsp;</td>
-            <td>&nbsp;</td>
+            <td nowrap align="right"></td>
+            <td></td>
             </tr>
             <tr valign="baseline">
-            <td nowrap align="right"><div align="left"><font color="#666">&nbsp; Valor a ser cobrado</div></td>
+            <td nowrap align="right"><div align="left"><font color="#666"> Valor a ser cobrado</div></td>
             <td><input type="text" name="valor" value="" size="10" placeholder="R$">
             <div align="left"><font color="#Red">* Obs: Com ou Sem Desconto</span></td>
             </tr>
             <tr valign="baseline">
-            <td nowrap align="right"><div align="left"><font color="#666">&nbsp; Valor &aacute; pagar:</div></td>
+            <td nowrap align="right"><div align="left"><font color="#666"> Valor &aacute; pagar:</div></td>
             <td><input type="text" name="valor2" value="" size="10" placeholder="R$">
             <div align="left">
             <div align="left"><font color="Red"> * Obs: Preencher se estiver parcelas em aberto</span></td>
             </tr>
             <tr valign="baseline">
-            <td nowrap align="right">&nbsp;</td>
-            <td>&nbsp;</td>
+            <td nowrap align="right"></td>
+            <td></td>
             </tr>
             <tr valign="baseline">
-            <td nowrap align="right"><div align="left"><font color="#666">&nbsp; Status:</div></td>
+            <td nowrap align="right"><div align="left"><font color="#666"> Status:</div></td>
             <td><div align="left"><font color="#666"><br>
             <input type="radio" name="status" id="radio3" value="1">
             pago 
@@ -242,27 +242,27 @@
             <input type="hidden" name="mes" value="<?php echo $_SESSION['mesdiario']; ?>" size="32">
             
             <tr valign="baseline">
-            <td nowrap align="right">&nbsp;</td>
-            <td>&nbsp;</td>
+            <td nowrap align="right"></td>
+            <td></td>
             </tr>
             <tr valign="baseline">
-            <td nowrap align="right"><div align="left"><font color="#666">&nbsp; Vencimento:</div></td>
+            <td nowrap align="right"><div align="left"><font color="#666"> Vencimento:</div></td>
             <td><input type="date" name="venci" value="" size="32"></td>
             </tr>
             <tr valign="baseline">
-            <td align="right" valign="top" nowrap><div align="left"><font color="#666">&nbsp; Descri&ccedil;&atilde;o</div></td>
+            <td align="right" valign="top" nowrap><div align="left"><font color="#666"> Descri&ccedil;&atilde;o</div></td>
             <td><label>
             <textarea name="descricao" id="descricao" cols="35" rows="5"></textarea>
             </label></td>
             </tr>
             <tr valign="baseline">
-            <td nowrap align="right">&nbsp;</td>
+            <td nowrap align="right"></td>
             <td><input type="submit" class="bt" value="Registrar"></td>
             </tr>
             </table>
             <input type="hidden" name="MM_insert" value="form1">
             </form>
-            <p>&nbsp;</p>
+            <p></p>
             </body>
             </html>
             <?php

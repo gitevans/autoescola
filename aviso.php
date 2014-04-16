@@ -2,9 +2,7 @@
 @session_start();
 ?>
 
-<?php
-    require'../Connections/conexao.php';
-	?>
+<?php require'../Connections/conexao.php';?>
 	<?php
 $id=$_REQUEST['id'];
 

@@ -273,7 +273,7 @@ $cpf = $row_cliente['cpf_titular'];
       <div class="box1">
     
       <br>
-Recebi do(a) Sr.(a) <?php echo $row_mov['cliente']; ?> </strong>&nbsp;a quantia supra <strong>R$</strong>&nbsp;<strong><?php
+Recebi do(a) Sr.(a) <?php echo $row_mov['cliente']; ?> </strong>a quantia supra <strong>R$</strong><strong><?php
 //Agora um exemplo prático
      $valor = number_format($val,2,",",".");
     

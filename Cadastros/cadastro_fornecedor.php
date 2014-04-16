@@ -67,8 +67,8 @@ include "../menu.php"
 		<td colspan="2" align="right" nowrap bgcolor="#000000"><div align="left"><span class="td2">Cadastro de Fornecedores</span></td>
 		</tr>
 		<tr valign="baseline">
-		<td nowrap="nowrap" align="right">&nbsp;</td>
-		<td>&nbsp;</td>
+		<td nowrap="nowrap" align="right"></td>
+		<td></td>
 		</tr>
 		<tr valign="baseline">
 		<td nowrap align="left"><div align="left"><span class="td7"><font color="#666666">Cnpj:</div></td>
@@ -89,6 +89,6 @@ include "../menu.php"
 		</table>
 		<input type="hidden" name="MM_insert" value="form1" />
 		</form>
-		<p>&nbsp;</p>
+		<p></p>
 		</body>
 		</html>

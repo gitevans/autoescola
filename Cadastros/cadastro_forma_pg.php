@@ -65,24 +65,24 @@ include "../menu.php"
 		<td colspan="2" align="right" nowrap="nowrap" bgcolor="#000000"><div align="left" class="td6">Cadastrar</div></td>
 		</tr>
 		<tr valign="baseline">
-		<td nowrap="nowrap" align="right">&nbsp;</td>
-		<td>&nbsp;</td>
+		<td nowrap="nowrap" align="right"></td>
+		<td></td>
 		</tr>
 		<tr valign="baseline">
 		<td nowrap="nowrap" align="right">Forma de Pagamento:</td>
 		<td><input name="desc" type="text" class="input3" value="" size="32" /></td>
 		</tr>
 		<tr valign="baseline">
-		<td nowrap="nowrap" align="right">&nbsp;</td>
-		<td>&nbsp;</td>
+		<td nowrap="nowrap" align="right"></td>
+		<td></td>
 		</tr>
 		<tr valign="baseline">
-		<td nowrap="nowrap" align="right">&nbsp;</td>
+		<td nowrap="nowrap" align="right"></td>
 		<td><input type="submit" class="bt4" value="Cadastrar" /></td>
 		</tr>
 		</table>
 		<input type="hidden" name="MM_insert" value="form1" />
 		</form>
-		<p>&nbsp;</p>
+		<p></p>
 		</body>
 		</html>

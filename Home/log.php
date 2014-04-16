@@ -4,7 +4,7 @@ session_start();
 		header('location:../aviso.php?id=1');
 	} else {
 
-require('../banco.php');
+require_once('../Connections/conexao.php');
     	    $sql3 = "TRUNCATE log";
 			mysql_query($sql3);
 // INICIA O LOG---------------------------------------	

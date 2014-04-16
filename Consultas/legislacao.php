@@ -81,8 +81,8 @@ $totalRows_TURNO = mysql_num_rows($TURNO);
 <form class="form-horizontal"  name="form1" action="<?php echo $editFormAction; ?>">
   <table align="center">
     <tr valign="baseline">
-      <td nowrap align="right">&nbsp;</td>
-      <td>&nbsp;</td>
+      <td nowrap align="right"></td>
+      <td></td>
     </tr>
     <input type="hidden" name="aluno" value="<?php echo $row_leg['nome']; ?>" size="32">
     <input type="hidden" name="status" value="Aguardando resultado..." size="32">
@@ -124,13 +124,13 @@ do {
     
     
     <tr valign="baseline">
-      <td nowrap align="right">&nbsp;</td>
+      <td nowrap align="right"></td>
       <td><input type="submit" class="bt4" value="Marcar"></td>
     </tr>
   </table>
   <input type="hidden" name="MM_insert" value="form1">
 </form>
-<p>&nbsp;</p>
+<p></p>
 </body>
 </html>
 <?php

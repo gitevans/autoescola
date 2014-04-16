@@ -78,7 +78,7 @@
 			<label>
 			<input class="bt2" type="submit" name="button" id="button" value="Pesquisar">
 			</label>
-			&nbsp; &nbsp; &nbsp;ALUNOS REPROVADOS NO EXAME DE LEGISLA&Ccedil;&Atilde;O
+			  ALUNOS REPROVADOS NO EXAME DE LEGISLA&Ccedil;&Atilde;O
 			</form>
 			</td>
 			</tr>

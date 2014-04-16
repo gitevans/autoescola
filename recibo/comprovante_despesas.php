@@ -277,11 +277,11 @@ $cpf = $row_cliente['cpf_titular'];
 <table width="90%" border="0" align="center">
   <tr>
     <td width="29%" rowspan="2"><img src="../Img/logo23.png" width="223" height="65"></td>
-    <td width="9%">&nbsp;</td>
-    <td width="62%"><div align="left"><strong>N&ordm; DO RECIBO:</strong><span class="style1">&nbsp;&nbsp;<?php echo date("dym")?><?php echo $row_aluno['']; ?></span></div></td>
+    <td width="9%"></td>
+    <td width="62%"><div align="left"><strong>N&ordm; DO RECIBO:</strong><span class="style1"><?php echo date("dym")?><?php echo $row_aluno['']; ?></span></div></td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
+    <td></td>
     <td><div align="left">Endere&ccedil;o: Rua 03 Qd.05 Casa 36 Cohatrac IV<br>
       telefone: (98) 8800-3198 | 81286981<br>
       email:eneylton@hotmail.com</div></td>
@@ -293,8 +293,8 @@ $cpf = $row_cliente['cpf_titular'];
 <br>
 <table width="90%" border="0" align="center">
   <tr>
-    <td width="51%"><span class="style2">N&ordm; DO RECIBO:&nbsp;&nbsp;<?php echo date("dym")?><?php echo $row_aluno['']; ?></span></td>
-    <td width="21%">&nbsp;</td>
+    <td width="51%"><span class="style2">N&ordm; DO RECIBO:<?php echo date("dym")?><?php echo $row_aluno['']; ?></span></td>
+    <td width="21%"></td>
     <td width="28%"><div align="right"><strong>
       <?php
 //Agora um exemplo pr&aacute;tico
@@ -306,8 +306,8 @@ $cpf = $row_cliente['cpf_titular'];
     </strong></div></td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td colspan="2" rowspan="8">&nbsp;</td>
+    <td></td>
+    <td colspan="2" rowspan="8"></td>
   </tr>
   <tr>
     <td>Recebemos do Sr. (a) <?php echo $row_mov['cliente']; ?></td>
@@ -333,7 +333,7 @@ $cpf = $row_cliente['cpf_titular'];
     <td>Referente ao pagamento: <?php echo $row_mov['servico']; ?></td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
+    <td></td>
   </tr>
   <tr>
     <td>Data: <?php echo $_SESSION['data']; ?></td>
@@ -353,11 +353,11 @@ $cpf = $row_cliente['cpf_titular'];
 <table width="90%" border="0" align="center">
   <tr>
     <td width="29%" rowspan="2"><img src="../Img/logo23.png" alt="" width="216" height="63"></td>
-    <td width="9%">&nbsp;</td>
-    <td width="62%"><div align="left"><strong>N&ordm; DO RECIBO:</strong><span class="style1">&nbsp;&nbsp;<?php echo date("dym")?><?php echo $row_aluno['']; ?></span></div></td>
+    <td width="9%"></td>
+    <td width="62%"><div align="left"><strong>N&ordm; DO RECIBO:</strong><span class="style1"><?php echo date("dym")?><?php echo $row_aluno['']; ?></span></div></td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
+    <td></td>
     <td><div align="left">Endere&ccedil;o: Rua 03 Qd.05 Casa 36 Cohatrac IV<br>
       telefone: (98) 8800-3198 | 81286981<br>
       email:eneylton@hotmail.com</div></td>
@@ -369,8 +369,8 @@ $cpf = $row_cliente['cpf_titular'];
 <br>
 <table width="90%" border="0" align="center">
   <tr>
-    <td width="51%"><span class="style2">N&ordm; DO RECIBO:&nbsp;&nbsp;<?php echo date("dym")?><?php echo $row_aluno['']; ?></span></td>
-    <td width="21%">&nbsp;</td>
+    <td width="51%"><span class="style2">N&ordm; DO RECIBO:<?php echo date("dym")?><?php echo $row_aluno['']; ?></span></td>
+    <td width="21%"></td>
     <td width="28%"><div align="right"><strong>
       <?php
 //Agora um exemplo pr&aacute;tico
@@ -382,20 +382,20 @@ $cpf = $row_cliente['cpf_titular'];
     </strong></div></td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
+    <td></td>
+    <td colspan="2"></td>
   </tr>
   <tr>
     <td>Recebemos do Sr. (a) <?php echo $row_mov['cliente']; ?></td>
-    <td colspan="2">&nbsp;</td>
+    <td colspan="2"></td>
   </tr>
   <tr>
     <td>Endere&ccedil;o:<?php echo $row_aluno['endereco']; ?></td>
-    <td colspan="2">&nbsp;</td>
+    <td colspan="2"></td>
   </tr>
   <tr>
     <td>CPF:</td>
-    <td colspan="2">&nbsp;</td>
+    <td colspan="2"></td>
   </tr>
   <tr>
     <td>a quantia de R$<strong>
@@ -407,19 +407,19 @@ $cpf = $row_cliente['cpf_titular'];
 	
 ?>
     </strong></td>
-    <td colspan="2">&nbsp;</td>
+    <td colspan="2"></td>
   </tr>
   <tr>
     <td>Referente ao pagamento: <?php echo $row_mov['servico']; ?></td>
-    <td colspan="2">&nbsp;</td>
+    <td colspan="2"></td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
+    <td></td>
+    <td colspan="2"></td>
   </tr>
   <tr>
     <td>Data: <?php echo $_SESSION['data']; ?></td>
-    <td colspan="2">&nbsp;</td>
+    <td colspan="2"></td>
   </tr>
  
     <td>______________________________________<br>
@@ -428,8 +428,8 @@ $cpf = $row_cliente['cpf_titular'];
       Assinatura do Recebedor</p></td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td colspan="2">&nbsp;</td>
+    <td></td>
+    <td colspan="2"></td>
   </tr>
 </table>
 </body>

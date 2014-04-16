@@ -392,12 +392,12 @@
         <tr>
         <td width="182" bgcolor="#D3D3D3"><span class="font">ENTRADA:</span></td>
         <td width="288"><div align="right" class="font">
-        <div align="left">R$&nbsp;<?php $total = $row_soma3['total']; echo number_format( $total  , 2 , ',' , '.' ); ?></div>
+        <div align="left">R$<?php $total = $row_soma3['total']; echo number_format( $total  , 2 , ',' , '.' ); ?></div>
         </div></td>
         </tr>
         <tr>
         <td bgcolor="#F7F7F7" ><span class="style4">SAIDA </span></td>
-        <td><span class="style4">R$&nbsp;<?php $total2 = $row_soma4['total']; echo number_format( $total2  , 2 , ',' , '.' ); ?></span></td>
+        <td><span class="style4">R$<?php $total2 = $row_soma4['total']; echo number_format( $total2  , 2 , ',' , '.' ); ?></span></td>
         </tr>
         <tr>
         <td bgcolor="#D3D3D3">TOTAL</td>
@@ -433,7 +433,7 @@
         
         <tr>
         <td colspan="7" bgcolor="#666"><input  name="selall" id="check" type="checkbox" value="" onclick="CheckAll()">
-        <input class="bt" type="submit" name="button2" id="button2" value="Deletar" />&nbsp;  &nbsp; <label class="td2">
+        <input class="bt" type="submit" name="button2" id="button2" value="Deletar" />   <label class="td2">
         Contas á Receber</td>
         </tr>
         <tr>
@@ -445,7 +445,7 @@
         <td  valign="top"><div align="center">Forma de pagamento</td>
         <td    valign="top"><div align="center">Situa&ccedil;&atilde;o</td>
         <td   valign="top"><div align="center">Valor</div></td>
-        <td   valign="top">&nbsp;</td>
+        <td   valign="top"></td>
         </tr>
         <?php
         
@@ -504,7 +504,7 @@
         <td valign="top"  class="td"><?php if ($resultado['status'] == 2){
                echo "<font color=\"red\">Em Aberto</font>"; 
                }    ?>            </td>
-        <td valign="top"  class="td"> <font color="#FF0000">R$&nbsp;<?php $total8 = $resultado['valor2']; echo number_format( $total8  , 2 , ',' , '.' ); ?></td>
+        <td valign="top"  class="td"> <font color="#FF0000">R$<?php $total8 = $resultado['valor2']; echo number_format( $total8  , 2 , ',' , '.' ); ?></td>
         <td valign="top"  class="td"><div align="center">
         <a href="#" onClick="MM_openBrWindow('baixar_pagamento.php?id_mov=<?php echo $resultado['id_mov'] ?>','','scrollbars=yes,resizable=yes,width=400,height=200')"><img src="../Img/BTD.jpg"></a></td>
         
@@ -561,7 +561,7 @@
         </table>
         <table width="900" border="0" align="center" style="border-collapse:collapse;">
         <tr>
-        <td bgcolor="#333"><div align="right" class="style3">R$&nbsp;<?php $total3 = $row_total_geral['total']; echo number_format( $total3  , 2 , ',' , '.' ); ?></div></td>
+        <td bgcolor="#333"><div align="right" class="style3">R$<?php $total3 = $row_total_geral['total']; echo number_format( $total3  , 2 , ',' , '.' ); ?></div></td>
         </tr>
         </table>
         
