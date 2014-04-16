@@ -344,10 +344,10 @@ $id=$_REQUEST['id'];
     </div> 
     </td>
   </tr>
-  <tr>
-    <td bgcolor="#666" align="center"><font color="#FFFFFF">Mhs Solucões Web Contato: (98) 8800-3198 | 3288046 <br>
-                                                               email:mhssloucoesweb@hotmail.com &copy; 2014 copyright</font></td>
-  </tr>
+<footer>
+Mhs Solucões Web Contato: (98) 8800-3198 | 3288046 
+email:mhssloucoesweb@hotmail.com &copy; 2014 copyright
+</footer>
 </table>
 
 

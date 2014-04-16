@@ -569,11 +569,10 @@ $totalRows_total_geral = mysql_num_rows($total_geral);
         </div>
         </td>
         </tr>
-        <tr>
-        <td bgcolor="#333" align="center"><font color="#FFFFFF">Mhs Solucões Web Contato: (98) 8800-3198 | 8128-6981 <br>
-												   
-eneylton@hotmail.com &copy; 2014 copyright</font></td>
-        </tr>
+        <footer>
+Mhs Solucões Web Contato: (98) 8800-3198 | 3288046 
+email:mhssloucoesweb@hotmail.com &copy; 2014 copyright
+</footer>
         </table>
         
         
