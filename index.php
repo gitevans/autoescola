@@ -19,7 +19,7 @@
     <h3 class="panel-title">Acesso</h3>
   </div>
   <div class="panel-body">
-    <form class="form-horizontal" name="form1" method="POST" action="login.php">
+    <form class="form-horizontal" name="form1" method="POST" action="../Home/index.php">
   <fieldset>
     <legend>Acesso</legend>
    <div class="form-group"><label  class="col-md-2 control-label">Usuário</label>
