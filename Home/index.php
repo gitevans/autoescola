@@ -44,10 +44,10 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
   </head>
             
 <body>
-            <table width="90%" border="0" style="border-collapse:collapse;" align="center">
-            <tr>
-            <td bgcolor="#333333"><div class="title">Gerenciador Auto Escola</div>
-            <div class="logo"><img width="230" height="80" src="../Img/logo.png"></div>
+<table width="90%" border="0" style="border-collapse:collapse;" align="center">
+   <tr>
+      <td bgcolor="#333333"><div class="title">Gerenciador Auto Escola</div>
+      <div class="logo"><img width="230" height="80" src="../Img/logo.png"></div>
             <div class="logado"><?php echo $_SESSION['data']; ?><br>
             
             Usu�rio logado: <font color="#FF9933"><?php echo $_SESSION['usuario']; ?></font></div></td>
