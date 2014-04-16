@@ -80,29 +80,27 @@ body {
 <table width="90%" border="0" style="border-collapse:collapse;" align="center">
   <tr>
     <td bgcolor="#3b5998"><div class="logado"><?php echo $_SESSION['data']; ?><br>
-      <span class="style15">Usuário logado:</span> <font size="6" color="#00FF33"><?php echo $_SESSION['usuario']; ?></font></div>
+      <span class="style15">Usuï¿½rio logado:</span> <font size="6" color="#00FF33"><?php echo $_SESSION['usuario']; ?></font></div>
     
     <div class="logo"><img src="../img/LOGO_CARRO.png">
     </div></td>
   </tr>
   <tr>
     <td>
-    
 	<nav id="menu">
 			<ul>
 			<li><a href="index.php">Home</a></li>
 			<li><a href="Cadastros.php">Cadastro</a></li>
 			<li><a href="buscar.php">Consultas</a></li>
 			<li><a href="acompanhamento_processo.php">Processos</a></li>
-            <li><a href="documentacao.php">Documentação</a></li>
+            <li><a href="documentacao.php">Documentaï¿½ï¿½o</a></li>
             <li><a href="financeiro.php">Financeiro</a></li>
-            <li><a href="administracao.php">Administração</a></li>
+            <li><a href="administracao.php">Administraï¿½ï¿½o</a></li>
 			<li><a href="../aviso.php?id=2">Sair</a></li>
 			</ul>
 			
 			</nav>
-			</div>
-			
+	</div>
 </td>
   </tr>
   <tr>
@@ -117,7 +115,7 @@ body {
 			   echo "<a class=\"link2\" href='../adicionar_veiculo.php'>Cadastrar veiculo
                      </a>"; } ?><br><br>
             &raquo;  <?php if (($_SESSION['chave']==1) or ($_SESSION['chave']==2 or ($_SESSION['chave']==3))){ 
-			   echo "<a  class=\"link2\" href='../cad_servicos.php'>Cadastrar serviços
+			   echo "<a  class=\"link2\" href='../cad_servicos.php'>Cadastrar serviï¿½os
                      </a>"; } ?><br><br>
             &raquo;  <?php if (($_SESSION['chave']==1) or ($_SESSION['chave']==2 or ($_SESSION['chave']==3))){ 
 			   echo "<a class=\"link2\" href='../cad_placa.php'>Cadastrar Placas
@@ -128,51 +126,13 @@ body {
 </div>
 </div>
     
-  
-      <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br></td>
+</td>
   </tr>
    <tr>
- <td colspan="7" bgcolor="#0b8efe" align="center"><font color="#FFFFFF">MHSSOLUÇÕES WEB (98) 88003198 &copy; copyright</font></td>
+ <td colspan="7" bgcolor="#0b8efe" align="center"><font color="#FFFFFF">MHSSOLUï¿½ï¿½ES WEB (98) 88003198 &copy; copyright</font></td>
  </tr>
 </table>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+<p></p>
+<p></p>
 </body>
 </html>
