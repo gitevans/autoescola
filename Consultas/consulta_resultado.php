@@ -167,6 +167,8 @@ $s_total = $s1 - $s2 ;
 </head>
 
 <body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
 <table width="1027" border="0" align="center">
   <tr>
     <td width="352" valign="top" bgcolor="#FFFFFF"><img src="../Img/logo.png" width="300" height="127" /></td>

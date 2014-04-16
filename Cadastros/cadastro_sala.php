@@ -34,17 +34,22 @@
 	$turno = mysql_query($query_turno, $conexao) or die(mysql_error());
 	$row_turno = mysql_fetch_assoc($turno);
 	$totalRows_turno = mysql_num_rows($turno);
-	?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-	<html>
-	<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-	<link rel="stylesheet" href="../css/estilo_principal.css" type="text/css">
-	<link rel="stylesheet" href="../css/menu_horizontal.css" type="text/css">
-	<title>Gerenciado auto Escola</title>
+	?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gerenciador de Auto Escola</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 	</head>
 	
 	<body>
-	<form method="post" name="form1" action="../Programacao/insert_sala.php">
+<div class="container-fluid">
+	<div class="row-fluid"> 
+
+	<form class="form-horizontal"  name="form1" action="../Programacao/insert_sala.php">
 	<table width="500" align="center" style="border-collapse:collapse;">
 	<tr valign="baseline">
 	<td colspan="2" align="left" nowrap bgcolor="#000000"><div align="left"><span class="td2">Cadastrar Sala de Aula</td>

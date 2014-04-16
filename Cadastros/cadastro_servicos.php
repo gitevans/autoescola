@@ -48,30 +48,27 @@
         
         
         ?>
-        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-        <html>
-        <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-        <link rel="stylesheet" href="../css/menu.css" type="text/css" />
-        <link rel="stylesheet" href="../css/cadastros.css" type="text/css" />
-        <title>Gerenciador Auto Escola</title>
-        <style type="text/css">
-        <!--
-        .style2 {
-        color: #FF0000;
-        font-size: 10px;
-        }
-        -->
-        </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gerenciador de Auto Escola</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
         </head>
         
         <body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
+        
+        <?php 
+include "../menu.php"
+?>
         
         
         
-        
-        
-        <form method="post" name="form1" action="../Programacao/insert_servicos.php">
+        <form class="form-horizontal"  name="form1" action="../Programacao/insert_servicos.php">
         <table align="center" style="border-collapse:collapse;" width="500">
         <input type="hidden" name="id_cliente" value="<?php echo $row_aluno['id_aluno']; ?>" size="32">
         <input type="hidden" name="data" value="<?php echo date("Y-m-d"); ?>" size="32">

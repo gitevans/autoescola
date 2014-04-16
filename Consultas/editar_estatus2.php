@@ -58,7 +58,7 @@ $query_stat2 = sprintf("SELECT * FROM legislacao WHERE id = %s", GetSQLValueStri
 $stat2 = mysql_query($query_stat2, $conexao) or die(mysql_error());
 $row_stat2 = mysql_fetch_assoc($stat2);
 $totalRows_stat2 = mysql_num_rows($stat2);
-?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+?><!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="../css/estilo_principal.css" type="text/css">
@@ -73,7 +73,7 @@ $totalRows_stat2 = mysql_num_rows($stat2);
 </head>
 
 <body onUnload="window.opener.location.reload()">
-<form method="post" name="form1" action="<?php echo $editFormAction; ?>">
+<form class="form-horizontal"  name="form1" action="<?php echo $editFormAction; ?>">
   <table align="center">
     <tr valign="baseline">
       <td colspan="2" align="right" nowrap bgcolor="#333333"><div align="left" class="style1">sITUA&Ccedil;&Atilde;O</div></td>

@@ -53,7 +53,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
-  $insertSQL = sprintf("INSERT INTO alunos (login, `data`, nome, endereco, bairro, complemento, municipio, cpf, cnh, val_cnh, renach, telefone, email, aniversario, observacao) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+  $insertSQL = sprintf("INSERT INTO alunos (login, data, nome, endereco, bairro, complemento, municipio, cpf, cnh, val_cnh, renach, telefone, email, aniversario, observacao) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
                        GetSQLValueString($_POST['login'], "text"),
                        GetSQLValueString($_POST['data'], "date"),
                        GetSQLValueString($_POST['nome'], "text"),
@@ -76,7 +76,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
   mysql_select_db($database_conexao, $conexao);
   $Result1 = mysql_query($insertSQL, $conexao) or die(mysql_error());
 }
-header('location:../cadastros/cadastro_alunos2.php');
+header('location:../Cadastros/cadastro_alunos2.php');
 ?>
 
 <?php 

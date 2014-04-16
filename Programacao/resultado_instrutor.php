@@ -54,19 +54,17 @@ if (isset($_GET['totalRows_instrutor'])) {
 }
 $totalPages_instrutor = ceil($totalRows_instrutor/$maxRows_instrutor)-1;
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <title>Untitled Document</title>
-<style type="text/css">
-<!--
-.style1 {color: #FF0000}
--->
-</style>
+
 </head>
 
 <body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
 <table width="1000" border="0" align="center">
   <tr>
     <td colspan="8">Lista de Aulos por instrutor</td>

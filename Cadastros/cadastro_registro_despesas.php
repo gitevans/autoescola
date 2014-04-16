@@ -2,25 +2,21 @@
 			@session_start();
 		
 			?>
-			<html>
-			
-			<head>
-			<link rel="stylesheet" href="../css/estilo_principal.css" type="text/css">
-			<link rel="stylesheet" href="../css/menu_horizontal.css" type="text/css">
-			
-			<title>Gerenciador Despachante</title>
-			<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-			<style type="text/css">
-			<!--
-			.style1 {
-			font-size: 24px;
-			color: #FFFFFF;
-			}
-			-->
-			</style>
-			</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gerenciador de Auto Escola</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 			
 			<body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
+<?php 
+include "../menu.php"
+?>
 			<table width="90%" border="0" style="border-collapse:collapse;" align="center">
 			<tr>
 			<td bgcolor="#333"><div class="title">Gerenciador Auto Escola</div>
@@ -41,23 +37,23 @@
 			<li><a href='#'>Cadastro</a>
 			<ul>
 			<li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3 )
-			{ echo "<a href='../cadastros/cadastro_alunos2.php'>Alunos </a>"; } ?></li>
+			{ echo "<a href='../Cadastros/cadastro_alunos2.php'>Alunos </a>"; } ?></li>
 			
 			
 			<li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
-			{ echo "<a href='../cadastros/cadastro_instrutor2.php'>Instrutor </a>"; } ?></li>
+			{ echo "<a href='../Cadastros/cadastro_instrutor2.php'>Instrutor </a>"; } ?></li>
 			
 			
 			<li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
-			{ echo "<a href='../cadastros/cadastro_fornecedor2.php'>Fornecedor </a>"; } ?></li>
+			{ echo "<a href='../Cadastros/cadastro_fornecedor2.php'>Fornecedor </a>"; } ?></li>
 			
 			
 			<li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
-			{ echo "<a href='../cadastros/cadastro_pagamento2.php'>Forma de Pagamento </a>"; } ?></li>
+			{ echo "<a href='../Cadastros/cadastro_pagamento2.php'>Forma de Pagamento </a>"; } ?></li>
 			
 			
 			<li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
-			{ echo "<a href='../cadastros/cadastro_veiculo2.php'>Ve&iacute;culos	</a>"; } ?></li>
+			{ echo "<a href='../Cadastros/cadastro_veiculo2.php'>Ve&iacute;culos	</a>"; } ?></li>
 			
 			
 			</ul>
@@ -174,7 +170,7 @@
             <li><?php if ($_SESSION['chave']==1){ echo "<a href='../Consultas/consulta_fluxo_caixa.php'>Fluxo de Caixa
 			</a>"; } ?></li>
             
-			<li><?php if ($_SESSION['chave']==1){ echo "<a href='../cadastros/cadastro_registro_despesas.php'>Registrar Despesas
+			<li><?php if ($_SESSION['chave']==1){ echo "<a href='../Cadastros/cadastro_registro_despesas.php'>Registrar Despesas
 			</a>"; } ?></li>
 			</ul>
 			</li>

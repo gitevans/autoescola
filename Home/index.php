@@ -44,6 +44,8 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
   </head>
             
 <body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
 <table width="90%" border="0" style="border-collapse:collapse;" align="center">
    <tr>
       <td bgcolor="#333333"><div class="title">Gerenciador Auto Escola</div>

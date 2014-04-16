@@ -70,6 +70,8 @@
 	
 	
 	<body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
 	
 	<table width="800" border="0" align="center" style="border-collapse:collapse;">
 	

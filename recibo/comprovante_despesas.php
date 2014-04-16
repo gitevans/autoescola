@@ -261,31 +261,19 @@ $cpf = $row_cliente['cpf_titular'];
 ?>
 
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>Gerenciador Auto Escola</title>
-<style type="text/css">
-<!--
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-}
-.style1 {
-	font-size: 24px;
-	font-weight: bold;
-}
-.style2 {
-	font-size: 18px;
-	font-weight: bold;
-}
--->
-</style></head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gerenciador de Auto Escola</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
 
 <body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
 <table width="90%" border="0" align="center">
   <tr>
     <td width="29%" rowspan="2"><img src="../Img/logo23.png" width="223" height="65"></td>

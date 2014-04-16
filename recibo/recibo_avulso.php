@@ -332,6 +332,8 @@ function MM_callJS(jsStr) { //v2.0
 </head>
 
 <body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
 <form id="form1" name="form1" method="post" action="">
 <br />
 <table width="1000" border="1" align="center" style="border-collapse:collapse; border-color:#FFF;">

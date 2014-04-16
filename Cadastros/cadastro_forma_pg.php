@@ -41,21 +41,24 @@
 		mysql_select_db($database_conexao, $conexao);
 		$Result1 = mysql_query($insertSQL, $conexao) or die(mysql_error());
 		}
-		?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-		<html xmlns="http://www.w3.org/1999/xhtml">
-		<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" href="../css/estilo_principal.css" type="text/css">
-		<link rel="stylesheet" href="../css/menu_horizontal.css" type="text/css">
-		<title>Gerenciador Auto Escola</title>
-		<style type="text/css">
-		<!--
-		.style1 {color: #FFFFFF}
-		-->
-		</style>
-		</head>
+		?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gerenciador de Auto Escola</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
 		
 		<body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
+		<?php 
+include "../menu.php"
+?>
+		
 		<form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
 		<table align="center" style="border-collapse:collapse;" width="500">
 		<tr valign="baseline">

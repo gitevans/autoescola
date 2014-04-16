@@ -74,6 +74,8 @@ body {
 </head>
 
 <body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
 
 <table width="90%" border="0" style="border-collapse:collapse;" align="center">
   <tr>
@@ -89,7 +91,7 @@ body {
 	<nav id="menu">
 			<ul>
 			<li><a href="index.php">Home</a></li>
-			<li><a href="cadastros.php">Cadastro</a></li>
+			<li><a href="Cadastros.php">Cadastro</a></li>
 			<li><a href="buscar.php">Consultas</a></li>
 			<li><a href="acompanhamento_processo.php">Processos</a></li>
             <li><a href="documentacao.php">Documentação</a></li>

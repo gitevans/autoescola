@@ -52,6 +52,8 @@ $totalRows_professor = mysql_num_rows($professor);
 </head>
 
 <body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
 <table width="817" border="0" align="center">
   <tr>
     <td colspan="3"><div align="center">LISTA DE PRESENÇA<br />

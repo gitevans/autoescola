@@ -66,7 +66,7 @@ $query_TURNO = "SELECT * FROM turno";
 $TURNO = mysql_query($query_TURNO, $conexao) or die(mysql_error());
 $row_TURNO = mysql_fetch_assoc($TURNO);
 $totalRows_TURNO = mysql_num_rows($TURNO);
-?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+?><!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
@@ -76,7 +76,9 @@ $totalRows_TURNO = mysql_num_rows($TURNO);
 </head>
 
 <body>
-<form method="post" name="form1" action="<?php echo $editFormAction; ?>">
+<div class="container-fluid">
+	<div class="row-fluid"> 
+<form class="form-horizontal"  name="form1" action="<?php echo $editFormAction; ?>">
   <table align="center">
     <tr valign="baseline">
       <td nowrap align="right">&nbsp;</td>

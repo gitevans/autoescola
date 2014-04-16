@@ -34,7 +34,7 @@
 	$instrutor = mysql_query($query_instrutor, $conexao) or die(mysql_error());
 	$row_instrutor = mysql_fetch_assoc($instrutor);
 	$totalRows_instrutor = mysql_num_rows($instrutor);
-	?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+	?><!DOCTYPE html>
 	<html>
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
@@ -49,6 +49,8 @@
 	</head>
 	
 	<body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
 	<form name="form1" method="post" action="../Programacao/resultado_instrutor.php">
 	<table width="500" border="0" align="center" style="border-collapse:collapse;">
       <tr>

@@ -65,7 +65,7 @@ $query_turno = "SELECT * FROM turno";
 $turno = mysql_query($query_turno, $conexao) or die(mysql_error());
 $row_turno = mysql_fetch_assoc($turno);
 $totalRows_turno = mysql_num_rows($turno);
-?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+?><!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="../css/estilo_principal.css" type="text/css">
@@ -75,7 +75,9 @@ $totalRows_turno = mysql_num_rows($turno);
 </head>
 
 <body>
-<form method="post" name="form1" action="<?php echo $editFormAction; ?>">
+<div class="container-fluid">
+	<div class="row-fluid"> 
+<form class="form-horizontal"  name="form1" action="<?php echo $editFormAction; ?>">
   <table align="center">
     <input type="hidden" name="aluno" value="<?php echo $row_trafego['nome']; ?>" size="32">
     <input type="hidden" name="status" value="Aguardando resultado..." size="32">

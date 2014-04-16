@@ -31,7 +31,7 @@
         </tr>
         <tr>
         <td bgcolor="#666">
-      		 <div id='nav'>
+      		<div id='nav'>
 			<div id='navleft'>
 			<ul>
 		    <li><a href="../Home/index.php">Home</a></li>
@@ -60,7 +60,7 @@
 			</ul>
 			</li>
 			
-			<li><a href="">Curso te&oacute;rico</a>
+			<li><a href="#">Curso te&oacute;rico</a>
 			<ul>
 		
             
@@ -83,34 +83,13 @@
             <li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
 			{ echo "<a href='../Consultas/lista_preset.php'>Lista de presen&ccedil;a</a>"; } ?></li>
             
-            
-              <li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
-			{ echo "<a href='../Consultas/consulta_aprovados_legislacao.php'>Alunos Aprovados</a>"; } ?></li>  
-            
-              <li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
-			{ echo "<a href='../Consultas/consulta_reprovados_legislacao.php'>Alunos Reprovados</a>"; } ?></li>            
+             <li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
+			{ echo "<a href='../Consultas/adicionar_legislacao.php'>Marca exames te&oacute;rico </a>"; } ?></li>
+                        
             
             </ul>
 			
 			
-			</li>
-            
-             <li><a href="">Simulador</a>
-			<ul>
-            
-            <li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3 ){
-		    echo "<a href='../Agendamento/calendar2.php'> Agendamento
-			</a>"; } ?></li>
-            
-            <li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3 ){
-		    echo "<a href='../Consultas/adicionar_carga_simulador.php'> Carga hor&aacute;ria simulador
-			</a>"; } ?></li>
-            
-             <li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3 ){
-		    echo "<a href='../Consultas/alunos_agendados_simulador2.php'> Rela&ccedil;&atilde;o de alunos agendados
-			</a>"; } ?></li>
-           
-			</ul>
 			</li>
             
            	<li><a href="#">Aulas pr&aacute;ticas</a>
@@ -123,16 +102,12 @@
 			 <li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
 			{ echo "<a href='../Consultas/relacao_alunos.php'>Instrutor / rela&ccedil;&atilde;o de alunos</a>"; } ?></li>
             
-               <li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3 ){
-		    echo "<a href='../Consultas/alunos_agendados2.php'> Rela&ccedil;&atilde;o de alunos agendados
-			</a>"; } ?></li>
-            
             
              <li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
-			{ echo "<a href='../Consultas/adicionar_carga_pratica.php'>Carga hor&aacute;ria </a>"; } ?></li>
+			{ echo "<a href='../Consultas/adicionar_carga_teorica.php'>Carga hor&aacute;ria </a>"; } ?></li>
             
              <li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
-			{ echo "<a href='../Consultas/adicionar_trafego.php'>Marca exame (DETRAN)</a>"; } ?></li>
+			{ echo "<a href='../Consultas/adicionar_carga_pratica.php'>Marca exame (DETRAN)</a>"; } ?></li>
             
              <li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
 			{ echo "<a href='../Consultas/prova_trafego2.php'>Data exames de tr&aacute;fego</a>"; } ?></li>
@@ -140,11 +115,6 @@
             
             <li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
 			{ echo "<a href='../Consultas/consulta_aluno_aprovado.php'>Rendimento do aluno</a>"; } ?></li>
-            
-             <li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
-			{ echo "<a href='../Consultas/consulta_aprovados_trafego.php'>Alunos Aprovados </a>"; } ?></li>
-             <li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
-			{ echo "<a href='../Consultas/consulta_reprovados_trafego.php'>Alunos Reprovados</a>"; } ?></li>
             
           
             </ul>
@@ -167,69 +137,14 @@
 			</a>"; } ?></li>
 			<li><?php if ($_SESSION['chave']==1){ echo "<a href='../Financeiro/devedor2.php'>Clientes em D&eacute;bito
 			</a>"; } ?></li>
-            
-            <li><?php if ($_SESSION['chave']==1){ echo "<a href='../Consultas/consulta_fluxo_caixa.php'>Fluxo de Caixa
-			</a>"; } ?></li>
-            
 			<li><?php if ($_SESSION['chave']==1){ echo "<a href='../cadastros/cadastro_registro_despesas.php'>Registrar Despesas
 			</a>"; } ?></li>
 			</ul>
 			</li>
-            <li><a href="#">Estat&iacute;sticas</a>
-			<ul>
-            
-            <li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2  ){
-		    echo "<a href='../Estatisticas_finaceira/total_lotacao_alunos_mes.php'> Alunos matriculados por m&ecirc;s
-			</a>"; } ?></li>
-            
-            <li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 ){
-		    echo "<a href='../Estatisticas_finaceira/total_lotacao_alunos_lotacao.php'> Total de recita por lota&ccedil;&atilde;o
-			</a>"; } ?></li>
-            <li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2  ){
-		    echo "<a href='../Estatisticas_finaceira/total_lotacao_despesas.php'> Total de Despesas por lota&ccedil;&atilde;o
-			</a>"; } ?></li>
-            
-            <li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 ){
-		    echo "<a href='../Estatisticas_finaceira/total_lotacao_despesas_mes.php'> Total de despesas por m&ecirc;s
-			</a>"; } ?></li>
-			
-			</ul>
-			</li>
-            
-            <li><a href="#">Administra&ccedil;&atilde;o</a>
-			<ul>
-            
-           
-             <li> <?php if ($_SESSION['chave']==1){ 
-			echo "<a href='cadastro_usuario2.php'>Cadastrar Usu&aacute;rio
-			</a>"; } ?>
-            </li>
-            
-            </li>
-             <li> <?php if ($_SESSION['chave']==1){ 
-			echo "<a href='../Consultas/edita_excliur_alunos.php'>Editar | Excluir Alunos
-			</a>"; } ?>
-            </li>
-			
-             <li> <?php if ($_SESSION['chave']==1){ 
-			echo "<a  href='../Consultas/admin.php'>A&ccedil;&otilde;es do Usu&aacute;rio
-			</a>"; } ?>
-            </li>
-            
-             <li> <?php if ($_SESSION['chave']==1){ 
-			echo "<a  href='../Home/log.php'>Excluir opera&ccedil;&otilde;es
-			</a>"; } ?>
-            </li>
-            
-			</ul>
-			</li>
-            <li><a href="../aviso.php?id=2">Sair</a></li>
-            
-			
+			<li><a href='ENDEREÇO DA PAGINA'>Administra&ccedil;&atilde;o</a></li>
 			</ul>
 			</div>
 			</div>
-			
 			
 			
         </td>

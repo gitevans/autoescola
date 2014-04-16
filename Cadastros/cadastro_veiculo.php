@@ -59,18 +59,25 @@
 		$especie = mysql_query($query_especie, $conexao) or die(mysql_error());
 		$row_especie = mysql_fetch_assoc($especie);
 		$totalRows_especie = mysql_num_rows($especie);
-		?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-		<html>
-		<head>
-		<link rel="stylesheet" href="../css/estilo_principal.css" type="text/css">
-		<link rel="stylesheet" href="../css/menu_horizontal.css" type="text/css">
-		
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-		<title>Gerenciador Auto escola</title>
+		?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gerenciador de Auto Escola</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 		</head>
 		
 		<body>
-		<form method="post" name="form1" action="<?php echo $editFormAction; ?>">
+<div class="container-fluid">
+	<div class="row-fluid"> 
+
+		<?php 
+include "../menu.php"
+?>
+		<form class="form-horizontal"  name="form1" action="<?php echo $editFormAction; ?>">
 		<table width="500" align="center">
 		<tr valign="baseline">
 		<td colspan="2" nowrap bgcolor="#000000" class="td2">Cadastro de veiculo<br>

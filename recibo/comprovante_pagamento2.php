@@ -261,7 +261,7 @@ $cpf = $row_cliente['cpf_titular'];
 ?>
 
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
@@ -288,6 +288,8 @@ text-transform:uppercase;}
 </style></head>
 
 <body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
 <table width="90%" border="0" align="center">
   <tr>
     <td width="29%" rowspan="2"><img src="../Img/logo23.png" width="223" height="65"></td>

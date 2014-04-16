@@ -99,6 +99,8 @@ MM_reloadPage(true);
 </head>
 
 <body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
 <table width="90%" align="center" border="0" style="border-collapse:collapse;"	>
   <tr>
     <td bgcolor="#3b5998"><div class="logado"><?php echo $_SESSION['data']; ?><br>
@@ -111,7 +113,7 @@ MM_reloadPage(true);
 				<nav id="menu">
 			<ul>
 			<li><a href="index.php">Home</a></li>
-			<li><a href="cadastros.php">Cadastro</a></li>
+			<li><a href="Cadastros.php">Cadastro</a></li>
 			<li><a href="buscar.php">Consultas</a></li>
 			<li><a href="acompanhamento_processo.php">Processos</a></li>
             <li><a href="documentacao.php">Documentação</a></li>

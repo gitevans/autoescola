@@ -56,7 +56,7 @@ $query_aluno = sprintf("SELECT * FROM trafego WHERE id = %s", GetSQLValueString(
 $aluno = mysql_query($query_aluno, $conexao) or die(mysql_error());
 $row_aluno = mysql_fetch_assoc($aluno);
 $totalRows_aluno = mysql_num_rows($aluno);
-?><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+?><!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="../css/estilo_principal.css" type="text/css">
@@ -70,7 +70,7 @@ $totalRows_aluno = mysql_num_rows($aluno);
 </style>
 </head>
 <body onUnload="window.opener.location.reload()">
-<form method="post" name="form1" action="<?php echo $editFormAction; ?>">
+<form class="form-horizontal"  name="form1" action="<?php echo $editFormAction; ?>">
   <table width="334" align="center">
     <tr valign="baseline">
       <td colspan="2" align="right" nowrap bgcolor="#000000"><div align="left"><br>

@@ -72,9 +72,8 @@
             }
             
             if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
-            $insertSQL = sprintf("INSERT INTO serv ( id_cliente, `data`, tipo, categoria, descricao, valor, valor2, status, mes, cliente, venci) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
-            
-			GetSQLValueString($_POST['id_cliente'], "text"),
+            $insertSQL = sprintf("INSERT INTO serv (id_servico, `data`, tipo, categoria, descricao, valor, valor2, status, mes, cliente, venci) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+            GetSQLValueString($_POST['id_servico'], "text"),
             GetSQLValueString($_POST['data'], "text"),
             GetSQLValueString($_POST['tipo'], "text"),
             GetSQLValueString($_POST['categoria'], "text"),
@@ -87,8 +86,7 @@
             GetSQLValueString($_POST['venci'], "date"));
             
             
-            
-			$idc           =  $_POST['id_cliente'];
+            $ids           =  $_POST['id_servico'];
             $tipo          =  $_POST['tipo'];
             $categoria     =  $_POST['categoria'];
             $descricao     =  $_POST['descricao'];
@@ -154,7 +152,6 @@
             <table width="600" align="center" style="border-collapse:collapse;">
             <input type="hidden" name="id_aluno" value="<?php echo $row_aluno['id_aluno']; ?>" size="32">
             <input type="hidden" name="data" value="<?php echo date("Y-m-d");?>" size="32">
-             <input type="hidden" name="id_cliente" value="<?php echo $_SESSION['usuario']; ?>" size="32">
             
             <input name="cliente" type="hidden" id="cliente" value="<?php echo $row_aluno['nome']; ?>" size="32">
             
@@ -276,7 +273,7 @@
             mysql_free_result($fpagamnto);
             ?>
             <?php 
-            $sql6 = "INSERT INTO movimento (id_mov,id_cliente,data, cliente, tipo,categoria,descricao, valor,valor2,status, mes) 
-            VALUES ('','$idc','$vencimento','$cliente','$tipo','$categoria','$descricao', '$val','$val2','$status', '$mes')";
+            $sql6 = "INSERT INTO movimento (id_mov, data, cliente,servico, tipo,categoria,descricao, valor,valor2,status, mes) 
+            VALUES ('', '$vencimento','$cliente','$ids','$tipo','$categoria','$descricao', '$val','$val2','$status', '$mes')";
             mysql_query($sql6);
             ?>

@@ -57,6 +57,6 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
   mysql_select_db($database_conexao, $conexao);
   $Result1 = mysql_query($insertSQL, $conexao) or die(mysql_error());
   
-  header('location:../cadastros/cadastro_instrutor2.php');
+  header('location:../Cadastros/cadastro_instrutor2.php');
 }
 ?>

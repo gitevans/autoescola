@@ -118,6 +118,8 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 			?>
 			
 			<body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
 			
 			<table width="1000" border="0" align="center" style="border-collapse:collapse;">
 			<tr>

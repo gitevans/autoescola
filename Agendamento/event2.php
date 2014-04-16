@@ -122,7 +122,7 @@ mysql_close($mysql);
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <title>calendario</title>
 <link rel="stylesheet" href="../css/menu.css" type="text/css" />
-<link rel="stylesheet" href="../css/cadastros.css" type="text/css" />
+<link rel="stylesheet" href="../css/Cadastros.css" type="text/css" />
 <style type="text/css">
 <!--
 body {
@@ -134,10 +134,12 @@ body {
 -->
 </style></head>
 <body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
 
 
 <div class="box" >
-<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+<form class="form-horizontal"  action="<?php echo $_SERVER['PHP_SELF']; ?>">
 <table width="660" border="0" align="center" style="border-collapse:collapse;">
   <tr>
     <td colspan="5" valign="top" bgcolor="#000000"><span class="td">Agentamento de alunos<br>

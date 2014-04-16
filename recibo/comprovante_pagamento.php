@@ -248,14 +248,19 @@ $cpf = $row_cliente['cpf_titular'];
 ?>
 
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>Gerenciador Auto Escola</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gerenciador de Auto Escola</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
 <?php echo $_SESSION['MM_Username']; ?><br>
 
       <?php

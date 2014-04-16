@@ -45,6 +45,8 @@ $totalRows_total2 = mysql_num_rows($total2);
 </head>
 
 <body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
 <table width="1200" border="0" align="center" style="border-collapse:collapse;">
   <tr>
     <td colspan="14" bgcolor="#FFFFFF"><span class="td"><span class="style2">Quantidade de Despesas por M&ecirc;s</span><br />

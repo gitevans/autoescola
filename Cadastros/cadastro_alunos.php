@@ -1,14 +1,14 @@
-		<?php require_once('../Connections/conexao.php'); ?><?php
-		
-		@session_start();
-		
-		?>
-		<?php
-		if (!function_exists("GetSQLValueString")) {
-		function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
-		{
-		$theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-		
+<?php require_once('../Connections/conexao.php'); ?>
+
+<?php
+@session_start();		
+?>
+<?php
+	if (!function_exists("GetSQLValueString")) {
+	function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+	{
+	$theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+
 		$theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
 		
 		switch ($theType) {
@@ -39,13 +39,13 @@
 		$row_municipio = mysql_fetch_assoc($municipio);
 		$totalRows_municipio = mysql_num_rows($municipio);
 		?>
-		<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-		<html>
-		<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-		<link rel="stylesheet" href="../css/estilo_principal.css" type="text/css">
-		<link rel="stylesheet" href="../css/menu_horizontal.css" type="text/css">
-		<title>Gerenciador Auto Escola</title>
+		<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gerenciador de Auto Escola</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 		<script type="text/javascript">
 		function mascara(e,src,mask) {
 		if(window.event) { 
@@ -71,18 +71,21 @@
 		}
 		}
 		</script>
-		<style type="text/css">
-		<!--
-		.style1 {color: #FFFFFF}
-		-->
-		</style>
 		</head>
 		
-		<body>
-		<form method="post" name="form1" action="../Programacao/insert_aluno.php">
+<body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
+
+<?php 
+include "../menu.php"
+?>
+
+
+<form class="form-horizontal" name="form1" action="../Programacao/insert_aluno.php">
 		<table width="500" align="center" style="border-collapse:collapse;">
 		<tr valign="baseline">
-		<td colspan="2" align="right" nowrap bgcolor="#000000"><div align="left"><span class="td2">Cadastro de Veículo</span>
+		<td colspan="2" align="right" nowrap bgcolor="#000000"><div align="left"><span class="td2">Cadastro de VeÃ­culo</span>
 		<input type="hidden" name="login" value="<?php echo $_SESSION['usuario']; ?>" size="32">
 		<input type="hidden"  name="data" value="<?php echo date("y-m-d"); ?>" size="32">
 		<br>
@@ -176,9 +179,8 @@
 		</table>
 		<input type="hidden" name="MM_insert" value="form1">
 		</form>
-		<p>&nbsp;</p>
-		</body>
-		</html>
+	</body>
+</html>
 		<?php
 		mysql_free_result($municipio);
 		?>

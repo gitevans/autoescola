@@ -86,21 +86,25 @@
 	$row_fornecedor = mysql_fetch_assoc($fornecedor);
 	$totalRows_fornecedor = mysql_num_rows($fornecedor);
 	?>
-	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+	<!DOCTYPE html>
 	<html>
 	<head>
-	<link rel="stylesheet" href="../css/estilo_principal.css" type="text/css">
-	<link rel="stylesheet" href="../css/menu_horizontal.css" type="text/css">
-	<link rel="stylesheet" href="../css/financeiro.css" type="text/css">
-	<link rel="stylesheet" href="../css/paginacao.css" type="text/css">
-	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-	<title>Gerenciador auto escola</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gerenciador de Auto Escola</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 	</head>
 	
 	<body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
+	<?php 
+include "../menu.php"
+?>
 	
-	
-	<form method="post" name="form1" action="../Programacao/insert_despesas.php">
+	<form class="form-horizontal"  name="form1" action="../Programacao/insert_despesas.php">
 	<table align="center"  style="border-collapse:collapse;" width="530">
 	<tr valign="baseline">
 	<td colspan="2" align="right" nowrap bgcolor="#000000"><div align="left" class="td2">

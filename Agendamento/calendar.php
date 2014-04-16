@@ -66,6 +66,8 @@
         
         </head>
         <body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
         <table width="90%" border="0" style="border-collapse:collapse;" align="center">
         <tr>
         <td bgcolor="#333"><div class="titulo style1">Gerenciador Auto Escola</div>
@@ -83,23 +85,23 @@
 			<li><a href='#'>Cadastro</a>
 			<ul>
 			<li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3 )
-			{ echo "<a href='../cadastros/cadastro_alunos2.php'>Alunos </a>"; } ?></li>
+			{ echo "<a href='../Cadastros/cadastro_alunos2.php'>Alunos </a>"; } ?></li>
 			
 			
 			<li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
-			{ echo "<a href='../cadastros/cadastro_instrutor2.php'>Instrutor </a>"; } ?></li>
+			{ echo "<a href='../Cadastros/cadastro_instrutor2.php'>Instrutor </a>"; } ?></li>
 			
 			
 			<li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
-			{ echo "<a href='../cadastros/cadastro_fornecedor2.php'>Fornecedor </a>"; } ?></li>
+			{ echo "<a href='../Cadastros/cadastro_fornecedor2.php'>Fornecedor </a>"; } ?></li>
 			
 			
 			<li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
-			{ echo "<a href='../cadastros/cadastro_pagamento2.php'>Forma de Pagamento </a>"; } ?></li>
+			{ echo "<a href='../Cadastros/cadastro_pagamento2.php'>Forma de Pagamento </a>"; } ?></li>
 			
 			
 			<li><?php if ($_SESSION['chave']==1 or $_SESSION['chave']==2 or $_SESSION['chave']==3)
-			{ echo "<a href='../cadastros/cadastro_veiculo2.php'>Ve&iacute;culos	</a>"; } ?></li>
+			{ echo "<a href='../Cadastros/cadastro_veiculo2.php'>Ve&iacute;culos	</a>"; } ?></li>
 			
 			
 			</ul>
@@ -216,7 +218,7 @@
             <li><?php if ($_SESSION['chave']==1){ echo "<a href='../Consultas/consulta_fluxo_caixa.php'>Fluxo de Caixa
 			</a>"; } ?></li>
             
-			<li><?php if ($_SESSION['chave']==1){ echo "<a href='../cadastros/cadastro_registro_despesas.php'>Registrar Despesas
+			<li><?php if ($_SESSION['chave']==1){ echo "<a href='../Cadastros/cadastro_registro_despesas.php'>Registrar Despesas
 			</a>"; } ?></li>
 			</ul>
 			</li>
@@ -280,7 +282,7 @@
         <tr>
         <td bgcolor="#FFFFFF">
         <div class="grid12">
-        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <form class="form-horizontal"  action="<?php echo $_SERVER['PHP_SELF']; ?>">
         
         <select name="month" class="input2">
         <?php

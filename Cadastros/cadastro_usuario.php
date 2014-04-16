@@ -53,21 +53,23 @@ $query_filial = "SELECT * FROM filias";
 $filial = mysql_query($query_filial, $conexao) or die(mysql_error());
 $row_filial = mysql_fetch_assoc($filial);
 $totalRows_filial = mysql_num_rows($filial);
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+?>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="../css/estilo_principal.css" type="text/css">
-			<link rel="stylesheet" href="../css/menu_horizontal.css" type="text/css">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Gerenciador Auto escola</title>
-<style type="text/css">
-<!--
-.style1 {color: #FFFFFF}
--->
-</style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gerenciador de Auto Escola</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
+<?php 
+include "../menu.php"
+?>
 <form action="<?php echo $editFormAction; ?>" method="post" name="form1" id="form1">
   <table width="500" align="center" style="border-collapse:collapse;">
     <tr valign="baseline">

@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gerenciador de Auto Escola</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
 <body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
 
 <div class="container-fluid col-md-offset-4">
 <div class="row">

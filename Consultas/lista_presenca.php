@@ -51,6 +51,8 @@
 			</head>
 			
 			<body>
+<div class="container-fluid">
+	<div class="row-fluid"> 
 			<form id="form1" name="form1" method="post" action="result_presenca.php">
 			<table width="500" border="0" align="center" style="border-collapse:collapse;">
 			<tr>

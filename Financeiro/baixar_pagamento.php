@@ -60,7 +60,7 @@
 	?>
 
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
  <link rel="stylesheet" href="../css/estilo_principal.css" type="text/css">
@@ -76,7 +76,7 @@
 </style></head>
 
 <body onUnload="window.opener.location.reload()">
-<form method="post" name="form1" action="<?php echo $editFormAction; ?>">
+<form class="form-horizontal"  name="form1" action="<?php echo $editFormAction; ?>">
   <table align="center">
     <tr valign="baseline">
       <td colspan="2" align="right" nowrap bgcolor="#333333"><div align="left">
